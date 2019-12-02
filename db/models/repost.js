@@ -1,4 +1,4 @@
-'use strict';
+
 module.exports = (sequelize, DataTypes) => {
   const Repost = sequelize.define('repost', {
     username: {
@@ -6,20 +6,17 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       reference: {
         model: 'User',
-        key: 'username'
-      }
+        key: 'username',
+      },
     },
     trackId: {
-      type: DataTypes.INTEGER
+      type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: 'Track',
-        key: 'id'
-      }
-    }
+        key: 'id',
+      },
+    },
   }, {});
-  Repost.associate = function(models) {
-    // associations can be defined here
-  };
   return Repost;
 };

@@ -1,4 +1,3 @@
-'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Playlist = sequelize.define('playlist', {
     id: {
@@ -9,12 +8,12 @@ module.exports = (sequelize, DataTypes) => {
     likes: DataTypes.INTEGER,
     reposts: DataTypes.INTEGER
   }, {});
-  Playlist.associate = function(models) {
+  Playlist.associate = (models) => {
     // associations can be defined here
     Playlist.hasMany(models.Track, {
       through: 'Playlist_Track',
-      foreignKey: 'playlistId'
-    })
+      foreignKey: 'playlistId',
+    });
   };
   return Playlist;
 };

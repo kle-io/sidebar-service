@@ -1,21 +1,21 @@
-'use strict';
 module.exports = (sequelize, DataTypes) => {
+  // eslint-disable-next-line camelcase
   const Playlist_Track = sequelize.define('playlist_track', {
     playlistId: {
-      type: DataTypes.INTEGER
+      type: DataTypes.INTEGER,
       allowNull: false,
       reference: {
         model: 'Playlist',
-        key: 'id'
-      }
+        key: 'id',
+      },
     },
     trackId: {
-      type: DataTypes.INTEGER
+      type: DataTypes.INTEGER,
       allowNull: false,
       reference: {
         model: 'Track',
-        key: 'id'
-      }
+        key: 'id',
+      },
     },
   }, {});
   Playlist_Track.associate = function(models) {
