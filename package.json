@@ -9,7 +9,6 @@
   "scripts": {
     "start": "nodemon server/index.js",
     "webpack-dev": "webpack -d --watch",
-    "sequelize:setup": "npx sequelize init",
     "db:setup": "node db/seed.js"
   },
   "dependencies": {
