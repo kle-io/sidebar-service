@@ -1,10 +1,10 @@
 module.exports = (sequelize, DataTypes) => {
-  const Like = sequelize.define('like', {
+  const Favorite = sequelize.define('favorite', {
     username: {
       type: DataTypes.STRING,
       allowNull: false,
       reference: {
-        model: 'User',
+        model: 'user',
         key: 'username',
       },
     },
@@ -12,10 +12,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'Track',
+        model: 'track',
         key: 'id',
       },
     },
-  }, {});
-  return Like;
+  }, { timestamps: false });
+  return Favorite;
 };

@@ -1,11 +1,11 @@
 
 module.exports = (sequelize, DataTypes) => {
-  const Repost = sequelize.define('repost', {
+  const Share = sequelize.define('share', {
     username: {
       type: DataTypes.STRING,
       allowNull: false,
       reference: {
-        model: 'User',
+        model: 'user',
         key: 'username',
       },
     },
@@ -13,10 +13,12 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'Track',
+        model: 'track',
         key: 'id',
       },
     },
-  }, {});
-  return Repost;
+  }, {
+    timestamps: false,
+  });
+  return Share;
 };

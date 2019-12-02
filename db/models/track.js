@@ -1,7 +1,12 @@
 
 module.exports = (sequelize, DataTypes) => {
   const Track = sequelize.define('track', {
-    id: DataTypes.INTEGER,
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+      allowNull: false,
+    },
     title: DataTypes.STRING,
     songUrl: DataTypes.STRING,
     genre: DataTypes.STRING,
@@ -10,29 +15,29 @@ module.exports = (sequelize, DataTypes) => {
     comments: DataTypes.INTEGER,
     reposts: DataTypes.INTEGER,
     albumId: DataTypes.INTEGER,
-  }, {});
+  }, {
+    timestamps: false,
+  });
   Track.associate = function (models) {
     // associations can be defined here
-    Track.hasMany(models.Like, {
-      through: models.Like,
+    Track.belongsToMany(models.user, {
+      through: 'favorite',
       foreignKey: 'trackId',
     });
 
-    Track.hasMany(models.Repost, {
-      through: models.Repost,
+    Track.belongsToMany(models.user, {
+      through: 'share',
       foreignKey: 'trackId',
     });
 
-    // albums
-    Track.belongsTo(models.Album, {
-      through: models.Album,
+    // // albums
+    Track.belongsTo(models.album, {
       foreignKey: 'albumId',
-      targetKey: 'id',
     });
 
     // playlist
-    Track.belongsToMany(models.Playlist, {
-      through: 'Playlist_Track',
+    Track.belongsToMany(models.playlist, {
+      through: models.playlist_track,
       foreignKey: 'trackId',
     });
   };

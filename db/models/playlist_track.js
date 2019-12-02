@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false,
       reference: {
-        model: 'Playlist',
+        model: 'playlist',
         key: 'id',
       },
     },
@@ -13,13 +13,11 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false,
       reference: {
-        model: 'Track',
+        model: 'track',
         key: 'id',
       },
     },
-  }, {});
-  Playlist_Track.associate = function(models) {
-    // associations can be defined here
-  };
+  }, { timestamps: false });
+
   return Playlist_Track;
 };

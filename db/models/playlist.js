@@ -3,15 +3,19 @@ module.exports = (sequelize, DataTypes) => {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
     },
     title: DataTypes.STRING,
     likes: DataTypes.INTEGER,
-    reposts: DataTypes.INTEGER
-  }, {});
+    reposts: DataTypes.INTEGER,
+  }, {
+    timestamps: false,
+  });
   Playlist.associate = (models) => {
     // associations can be defined here
-    Playlist.hasMany(models.Track, {
-      through: 'Playlist_Track',
+    Playlist.belongsToMany(models.track, {
+      through: 'playlist_track',
       foreignKey: 'playlistId',
     });
   };

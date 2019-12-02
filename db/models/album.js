@@ -1,13 +1,20 @@
 module.exports = (sequelize, DataTypes) => {
   const Album = sequelize.define('album', {
-    id: DataTypes.INTEGER,
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
+    },
     type: DataTypes.STRING,
     title: DataTypes.STRING,
     year: DataTypes.INTEGER,
-  }, {});
+  }, { timestamps: false });
   Album.associate = (models) => {
     // associations can be defined here
-    Album.hasMany(models.Track);
+    Album.belongsToMany(models.track, {
+      through: 'track',
+    });
   };
   return Album;
 };
