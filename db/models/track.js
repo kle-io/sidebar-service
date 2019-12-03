@@ -14,7 +14,14 @@ module.exports = (sequelize, DataTypes) => {
     likes: DataTypes.INTEGER,
     comments: DataTypes.INTEGER,
     reposts: DataTypes.INTEGER,
-    albumId: DataTypes.INTEGER,
+    albumId: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      references: {
+        model: 'album',
+        key: 'id',
+      },
+    },
   }, {
     timestamps: false,
   });
