@@ -6,6 +6,7 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       autoIncrement: true,
     },
+    cover: DataTypes.STRING,
     title: DataTypes.STRING,
     likes: DataTypes.INTEGER,
     reposts: DataTypes.INTEGER,
@@ -15,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
   Playlist.associate = (models) => {
     // associations can be defined here
     Playlist.belongsToMany(models.track, {
-      through: 'playlist_track',
+      through: 'playlistTrack',
       foreignKey: 'playlistId',
     });
   };

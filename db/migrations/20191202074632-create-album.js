@@ -7,6 +7,9 @@ module.exports = {
       primaryKey: true,
       type: Sequelize.INTEGER,
     },
+    cover: {
+      type: Sequelize.STRING,
+    },
     type: {
       type: Sequelize.STRING,
     },

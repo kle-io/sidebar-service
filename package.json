@@ -9,7 +9,7 @@
   "scripts": {
     "start": "nodemon server/index.js",
     "webpack-dev": "webpack -d --watch",
-    "db:setup": "node db/seed.js"
+    "db:setup": "npx sequelize db:migrate && npx sequelize db:seed:all"
   },
   "dependencies": {
     "express": "^4.17.1",
