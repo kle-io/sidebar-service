@@ -1,6 +1,6 @@
 
 module.exports = {
-  up: (queryInterface, Sequelize) => queryInterface.createTable('playlist_tracks', {
+  up: (queryInterface, Sequelize) => queryInterface.createTable('playlistTracks', {
     playlistId: {
       type: Sequelize.INTEGER,
     },
@@ -8,5 +8,5 @@ module.exports = {
       type: Sequelize.INTEGER,
     },
   }),
-  down: (queryInterface) => queryInterface.dropTable('playlist_tracks'),
+  down: (queryInterface) => queryInterface.dropTable('playlistTracks'),
 };

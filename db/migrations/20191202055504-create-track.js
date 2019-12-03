@@ -30,6 +30,10 @@ module.exports = {
     },
     albumId: {
       type: Sequelize.INTEGER,
+      references: {
+        model: 'album',
+        key: 'id',
+      },
     },
   }),
   down: (queryInterface) => queryInterface.dropTable('tracks'),

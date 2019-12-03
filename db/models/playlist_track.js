@@ -1,6 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
   // eslint-disable-next-line camelcase
-  const Playlist_Track = sequelize.define('playlist_track', {
+  const PlaylistTrack = sequelize.define('playlistTrack', {
     playlistId: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -19,5 +19,5 @@ module.exports = (sequelize, DataTypes) => {
     },
   }, { timestamps: false });
 
-  return Playlist_Track;
+  return PlaylistTrack;
 };
