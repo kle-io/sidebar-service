@@ -14,38 +14,40 @@ module.exports = (sequelize, DataTypes) => {
     likes: DataTypes.INTEGER,
     comments: DataTypes.INTEGER,
     reposts: DataTypes.INTEGER,
-    albumId: {
-      type: DataTypes.INTEGER,
-      allowNull: true,
-      references: {
-        model: 'album',
-        key: 'id',
-      },
-    },
+    albumId: DataTypes.INTEGER,
   }, {
     timestamps: false,
   });
   Track.associate = function (models) {
     // associations can be defined here
     Track.belongsToMany(models.user, {
-      through: 'favorite',
-      foreignKey: 'trackId',
+      through: {
+        model: models.favorite,
+        unique: 'false',
+        as: 'favorites',
+      },
+      otherkey: 'username',
+      constraints: false,
     });
 
     Track.belongsToMany(models.user, {
-      through: 'share',
-      foreignKey: 'trackId',
+      through: {
+        model: models.share,
+        unique: 'false',
+        as: 'shares',
+      },
+      otherkey: 'username',
+      constraints: false,
     });
 
     // // albums
-    Track.belongsTo(models.album, {
-      foreignKey: 'albumId',
-    });
+    Track.belongsTo(models.album, { constraints: false });
 
     // playlist
     Track.belongsToMany(models.playlist, {
       through: models.playlistTrack,
-      foreignKey: 'trackId',
+      otherkey: 'playlistId',
+      constraints: false,
     });
   };
   return Track;

@@ -11,11 +11,5 @@ module.exports = (sequelize, DataTypes) => {
     title: DataTypes.STRING,
     year: DataTypes.INTEGER,
   }, { timestamps: false });
-  Album.associate = (models) => {
-    // associations can be defined here
-    Album.belongsToMany(models.track, {
-      through: 'track',
-    });
-  };
   return Album;
 };

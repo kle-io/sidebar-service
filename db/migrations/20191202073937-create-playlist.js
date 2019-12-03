@@ -16,6 +16,9 @@ module.exports = {
     reposts: {
       type: Sequelize.INTEGER,
     },
+    cover: {
+      type: Sequelize.STRING,
+    },
   }),
   down: (queryInterface) => queryInterface.dropTable('playlists'),
 };
