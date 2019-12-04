@@ -18,11 +18,9 @@ module.exports = {
           path.resolve(__dirname, SRC_DIR),
         ],
         exclude: /node_modules/,
-        loader: 'babel-loader',
-        options: {
-          presets: ['@babel/preset-env', { targets: { node: 'current' } }, '@babel/preset-react'],
-        },
+        loader: ['babel-loader'],
       },
     ],
   },
+  resolve: { extensions: ['.js', '.jsx'] },
 };
