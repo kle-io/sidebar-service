@@ -8,10 +8,17 @@
   },
   "scripts": {
     "start": "nodemon server/index.js",
-    "webpack-dev": "webpack -d --watch",
+    "webpack-dev": "webpack-dev-server -d --watch",
     "db:setup": "npx sequelize db:migrate && npx sequelize db:seed:all",
     "lint": "npx eslint client/src/*",
-    "test": "npx jest --coverage"
+    "test": "npx jest",
+    "test:coverage": "npm test -- --coverage"
+  },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "jest-enzyme"
+    ],
+    "testEnvironment": "enzyme"
   },
   "dependencies": {
     "express": "^4.17.1",
@@ -23,9 +30,13 @@
   },
   "devDependencies": {
     "@babel/core": "^7.7.4",
+    "@babel/plugin-transform-modules-commonjs": "^7.7.4",
     "@babel/preset-env": "^7.7.4",
     "@babel/preset-react": "^7.7.4",
+    "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.15.1",
     "eslint": "^6.7.2",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor.git",
@@ -34,6 +45,8 @@
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-react-hooks": "^1.7.0",
     "jest": "^24.9.0",
+    "jest-environment-enzyme": "^7.1.2",
+    "jest-enzyme": "^7.1.2",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10"
   },
