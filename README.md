@@ -1,13 +1,13 @@
-# Project Name
+# kleio
 
-> Project description
+> a clone of a Soundcloud song page built with service oriented architecture
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/kle-io/main-song-player
+  - https://github.com/kle-io/toolbar
+  - https://github.com/kle-io/sidebar-service
+  - https://github.com/kle-io/Comment-section
 
 ## Table of Contents
 
