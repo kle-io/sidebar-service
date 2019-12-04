@@ -9,7 +9,9 @@
   "scripts": {
     "start": "nodemon server/index.js",
     "webpack-dev": "webpack -d --watch",
-    "db:setup": "npx sequelize db:migrate && npx sequelize db:seed:all"
+    "db:setup": "npx sequelize db:migrate && npx sequelize db:seed:all",
+    "lint": "npx eslint client/src/*",
+    "test": "npx jest --coverage"
   },
   "dependencies": {
     "express": "^4.17.1",
@@ -31,6 +33,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-react-hooks": "^1.7.0",
+    "jest": "^24.9.0",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10"
   },
