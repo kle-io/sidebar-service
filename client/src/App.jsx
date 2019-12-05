@@ -22,6 +22,8 @@ const Wrapper = styled.div`
 const About = styled.div`
   margin-right: 330px;
   width: 850px;
+  border-right: 1px solid #f2f2f2;
+  height: 100%;
   `;
 
 export default () => (
