@@ -15,15 +15,13 @@
       ]
     },
     "development": {
-      "presets": [
-        ["@babel/preset-env",
+      "presets": [["@babel/preset-env",
         {
           "targets": {
             "node": "current"
           }
-        }],
-        "@babel/preset-react"
-      ]
+        }], "@babel/preset-react"],
+      "plugins": ["babel-plugin-styled-components"]
     }
   }
 }
