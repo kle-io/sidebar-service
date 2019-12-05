@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "nodemon server/index.js",
-    "webpack-dev": "webpack -d --watch",
+    "build": "webpack -d --watch",
     "db:setup": "npx sequelize db:migrate && npx sequelize db:seed:all",
     "lint": "npx eslint client/src/*",
     "test": "npx jest",
@@ -23,6 +23,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "mysql2": "^2.0.1",
+    "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "sequelize": "^5.21.2",
