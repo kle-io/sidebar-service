@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { formatCount } from '../lib';
 
 const Wrapper = styled.div`
   margin-bottom: 20px;
@@ -34,7 +35,7 @@ const Icon = styled.span`
   background-image: url("${(props) => props.url}");
   background-repeat: no-repeat;
   background-position: 50%;
-  background-size: 28px 28px;
+  background-size: contain;
   height: 18px;
   width: 24px;
   margin-right: 6px;
@@ -43,7 +44,7 @@ const Icon = styled.span`
 
 const icons = {
   'Related tracks': 'https://s3-us-west-1.amazonaws.com/kleio.sidebar/icons/iconmonstr-sound-wave-1-240.png',
-  likes: 'https://s3-us-west-1.amazonaws.com/kleio.sidebar/icons/iconmonstr-favorite-7-240.png',
+  likes: 'https://s3-us-west-1.amazonaws.com/kleio.sidebar/icons/iconmonstr-favorite-7-24.png',
   'In albums': 'https://s3-us-west-1.amazonaws.com/kleio.sidebar/icons/iconmonstr-layer-2-240.png',
   'In playlists': 'https://s3-us-west-1.amazonaws.com/kleio.sidebar/icons/iconmonstr-layer-2-240.png',
   reposts: 'https://s3-us-west-1.amazonaws.com/kleio.sidebar/icons/iconmonstr-retweet-2-240.png',
@@ -54,13 +55,9 @@ const Module = ({ title, children, count }) => (
     <article>
       <Link href="http://example.com">
         <Header>
-          {/* TODO: render icon conditionally based on title */}
           <Icon url={icons[title]} />
           <span>
-            {/* TODO: truncate count */}
-            {
-              count < 10000 ? count : `${Math.round(count / 1000)}K`
-            }
+            { (title === 'likes' || title === 'reposts') && formatCount(count) }
             { title }
           </span>
         </Header>

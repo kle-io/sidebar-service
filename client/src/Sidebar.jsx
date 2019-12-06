@@ -15,5 +15,9 @@ export default () => (
   <Wrapper>
     <Dashbox />
     <Module title="Related tracks" />
+    <Module title="In albums" />
+    <Module title="In playlists" />
+    <Module count={10001} title="likes" />
+    <Module count={435882} title="reposts" />
   </Wrapper>
 );
