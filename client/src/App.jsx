@@ -1,6 +1,21 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import Sidebar from './Sidebar';
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    font: 12px/1.4 Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;
+    color: #999;
+  }
+
+  a, a:visited {
+    text-decoration: none;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.3
+  }
+`;
 
 const Container = styled.div`
   margin: auto;
@@ -28,6 +43,7 @@ const About = styled.div`
 
 export default () => (
   <div>
+    <GlobalStyle />
     <Container>
       <Hero />
       <Wrapper>
