@@ -15,10 +15,11 @@ module.exports = (sequelize, DataTypes) => {
     comments: DataTypes.INTEGER,
     reposts: DataTypes.INTEGER,
     albumId: DataTypes.INTEGER,
+    artist: DataTypes.STRING,
   }, {
     timestamps: false,
   });
-  Track.associate = function (models) {
+  Track.associate = (models) => {
     // associations can be defined here
     Track.belongsToMany(models.user, {
       through: {
