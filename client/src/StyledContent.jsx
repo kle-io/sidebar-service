@@ -1,0 +1,117 @@
+import styled from 'styled-components';
+
+const Wrapper = styled.div`
+  margin-top: 4px;
+  overflow: hidden;
+
+  &:before, &:after {
+    content: '';
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+`;
+
+const Stats = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    font-size: 11px;
+    line-height: 12px;
+    list-style: none;
+  }
+
+  li > span, li > a {
+    margin: 5px 9px 5px 0;
+    display: inline-block;
+  }
+
+  li > span:before, li > a:before {
+    width: 16px;
+    height: 12px;
+    vertical-align: top;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    display: inline-block;
+    content: "";
+  }
+
+  .ministats-plays:before {
+    background-image: url("https://s3-us-west-1.amazonaws.com/kleio.sidebar/icons/iconmonstr-media-control-48-240.png");
+    background-size: contain;
+  }
+
+  .ministats-likes:before {
+    background-image: url("https://s3-us-west-1.amazonaws.com/kleio.sidebar/icons/iconmonstr-favorite-7-240.png");
+    background-size: contain;
+  }
+
+  .ministats-reposts:before {
+    background-image: url("https://s3-us-west-1.amazonaws.com/kleio.sidebar/icons/iconmonstr-retweet-2-240.png");
+    background-size: contain;
+  }
+
+  .ministats-comments:before {
+    background-image: url("https://s3-us-west-1.amazonaws.com/kleio.sidebar/icons/iconmonstr-speech-bubble-15-240.png");
+    background-size: contain;
+  }
+
+  a, a:visited {
+    text-decoration: none;
+    color: #999;
+  }
+`;
+
+const Title = styled.div`
+  display: flex;
+  align-items: flex-start;
+  font-size: 14px;
+
+  &:before, &:after {
+    content: '';
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+
+  a {
+    height: 1.3em;
+    float: left;
+    color: #333;
+    max-width: 100%,
+    font-weight: 100;
+    box-sizing: border-box;
+  }
+`;
+
+const Username = styled.div`
+  font-weight: 100;
+  color: #999;
+  overflow: hidden;
+  white-space: nowarp;
+  text-overflow: ellipsis;
+  word-break: normal;
+  font-size: 14px;
+  line-height: 1;
+  margin: 0 0 2px;
+
+  a {
+    color: #999;
+  }
+`;
+
+export {
+  Wrapper,
+  Stats,
+  Title,
+  Username,
+};

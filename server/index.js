@@ -7,9 +7,10 @@ app.use('/', express.static(path.resolve(__dirname, '..', 'public')));
 app.use(express.json());
 
 app.get('/api/tracks/:id', (req, res) => {
-  db.track.findOne({
-    include: [{ all: true }],
-  }, { where: { id: req.params.id } })
+  db.playlist.findOne({
+    where: { id: req.params.id },
+    include: [{ model: db.track, through: db.playlistTrack }],
+  })
     .then((track) => res.json(track));
 });
 
