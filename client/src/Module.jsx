@@ -50,7 +50,7 @@ const Icon = styled.span`
 `;
 
 const icons = {
-  'Related tracks': 'https://s3-us-west-1.amazonaws.com/kleio.sidebar/icons/iconmonstr-sound-wave-1-240.png',
+  'Related tracks': 'https://s3-us-west-1.amazonaws.com/kleio.sidebar/icons/icons8-audio-wave-24.png',
   likes: 'https://s3-us-west-1.amazonaws.com/kleio.sidebar/icons/iconmonstr-favorite-7-24.png',
   'In albums': 'https://s3-us-west-1.amazonaws.com/kleio.sidebar/icons/iconmonstr-layer-2-240.png',
   'In playlists': 'https://s3-us-west-1.amazonaws.com/kleio.sidebar/icons/iconmonstr-layer-2-240.png',
