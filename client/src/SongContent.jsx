@@ -12,11 +12,8 @@ class SongContent extends Component {
   constructor(props) {
     super(props);
 
-    // Increment and decrement plays
     this.state = {};
   }
-
-  // handleClick (Fav)
 
   render() {
     const { track } = this.props;
@@ -29,31 +26,39 @@ class SongContent extends Component {
               <Username>
                 <a href="/"><span>{track.artist}</span></a>
               </Username>
-              {/* TODO: Song Title */}
               <a href="/">{track.title}</a>
             </div>
           </Title>
           <Stats>
-            <li>
-              <span className="ministats-plays">
-                <span>{formatCount(track.plays)}</span>
-              </span>
-            </li>
-            <li>
-              <a href="/" className="ministats-likes">
-                <span>{formatCount(track.likes)}</span>
-              </a>
-            </li>
-            <li>
-              <a href="/" className="ministats-reposts">
-                <span>{formatCount(track.reposts)}</span>
-              </a>
-            </li>
-            <li>
-              <a href="/" className="ministats-comments">
-                <span>{formatCount(track.comments)}</span>
-              </a>
-            </li>
+            {track.plays > 0 && (
+              <li>
+                <span className="ministats-plays">
+                  <span>{formatCount(track.plays)}</span>
+                </span>
+              </li>
+            )}
+            {track.likes > 0 && (
+              <li>
+                <a href="/" className="ministats-likes">
+                  <span>{formatCount(track.likes)}</span>
+                </a>
+              </li>
+            )}
+            {track.reposts > 0 && (
+
+              <li>
+                <a href="/" className="ministats-reposts">
+                  <span>{formatCount(track.reposts)}</span>
+                </a>
+              </li>
+            )}
+            {track.comments > 0 && (
+              <li>
+                <a href="/" className="ministats-comments">
+                  <span>{formatCount(track.comments)}</span>
+                </a>
+              </li>
+            )}
           </Stats>
         </Wrapper>
       </>

@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import {
   Wrapper,
@@ -8,7 +7,27 @@ import {
   Username,
 } from './StyledContent';
 
-const Album = ({ data }) => ('');
+const Album = ({ data }) => (
+  <>
+    <Wrapper>
+      <Title>
+        <div>
+          <Username>
+            <a href="/"><span>{data.artist}</span></a>
+          </Username>
+          <a href="/"><span>{data.title}</span></a>
+        </div>
+      </Title>
+      {(data.type || data.year) && (
+        <span>
+          {data.type}
+          &nbsp;·&nbsp;
+          {data.year}
+        </span>
+      )}
+    </Wrapper>
+  </>
+);
 
 Album.propTypes = {
   data: PropTypes.shape({

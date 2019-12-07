@@ -12,6 +12,7 @@ const Cover = styled.span`
   height: 50px;
   position: relative;
   text-align: center;
+  float: left;
 `;
 
 const Image = styled.img`
@@ -22,12 +23,6 @@ const Image = styled.img`
 
 const SetBadge = ({ set }) => (
   <>
-    {/*
-      if set.type
-        Album Content
-      else
-        Playlist Content
-      */}
     <Cover>
       <Image src={set.cover} />
     </Cover>
@@ -36,8 +31,6 @@ const SetBadge = ({ set }) => (
 );
 
 SetBadge.propTypes = {
-  // Get the shape of albums and playlists
-  // proptypes array of either album shape or playlist shape
   set: PropTypes.oneOf([
     PropTypes.shape({
       id: PropTypes.number,
@@ -50,6 +43,7 @@ SetBadge.propTypes = {
     PropTypes.shape({
       id: PropTypes.number,
       title: PropTypes.string,
+      username: PropTypes.string,
       cover: PropTypes.string,
       likes: PropTypes.number,
       reposts: PropTypes.number,

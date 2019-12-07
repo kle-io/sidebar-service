@@ -11,7 +11,7 @@ const List = styled.ul`
 `;
 
 const CompactListItem = styled.li`
-  padding: 10px 0;
+  padding: 5px 0;
   margin-right: -6px;
   left: -6px;
 `;
