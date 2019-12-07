@@ -7,30 +7,15 @@ module.exports = {
       primaryKey: true,
       type: Sequelize.INTEGER,
     },
-    title: {
-      type: Sequelize.STRING,
-    },
-    songUrl: {
-      type: Sequelize.STRING,
-    },
-    genre: {
-      type: Sequelize.STRING,
-    },
-    cover: {
-      type: Sequelize.STRING,
-    },
-    likes: {
-      type: Sequelize.INTEGER,
-    },
-    comments: {
-      type: Sequelize.INTEGER,
-    },
-    reposts: {
-      type: Sequelize.INTEGER,
-    },
-    albumId: {
-      type: Sequelize.INTEGER,
-    },
+    title: Sequelize.STRING,
+    songUrl: Sequelize.STRING,
+    genre: Sequelize.STRING,
+    cover: Sequelize.STRING,
+    likes: Sequelize.INTEGER,
+    comments: Sequelize.INTEGER,
+    reposts: Sequelize.INTEGER,
+    albumId: Sequelize.INTEGER,
+    userUsername: Sequelize.INTEGER,
   }),
   down: (queryInterface) => queryInterface.dropTable('tracks'),
 };

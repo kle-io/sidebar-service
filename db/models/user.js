@@ -12,18 +12,9 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     timestamps: false,
   });
-  User.associate = function(models) {
-    // associations can be defined here
-    User.belongsToMany(models.track, {
-      through: 'favorite',
-      foreignKey: 'username',
-    });
-
-    User.belongsToMany(models.track, {
-      through: 'share',
-      foreignKey: 'username',
-    });
-
+  User.associate = (models) => {
+    User.belongsToMany(models.track, { through: 'favorite' });
+    User.belongsToMany(models.track, { through: 'share' });
   };
   return User;
 };

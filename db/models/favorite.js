@@ -1,6 +1,12 @@
 module.exports = (sequelize, DataTypes) => {
   const Favorite = sequelize.define('favorite', {
-    username: {
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+      allowNull: false,
+    },
+    userUsername: {
       type: DataTypes.STRING,
       allowNull: false,
       reference: {
@@ -17,5 +23,9 @@ module.exports = (sequelize, DataTypes) => {
       },
     },
   }, { timestamps: false });
+  Favorite.associate = (models) => {
+    Favorite.belongsTo(models.track);
+    Favorite.belongsTo(models.user);
+  };
   return Favorite;
 };

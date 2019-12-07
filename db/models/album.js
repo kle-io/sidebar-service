@@ -10,12 +10,10 @@ module.exports = (sequelize, DataTypes) => {
     type: DataTypes.STRING,
     title: DataTypes.STRING,
     year: DataTypes.INTEGER,
+    userUsername: DataTypes.STRING,
   }, { timestamps: false });
   Album.associate = (models) => {
-    // associations can be defined here
-    Album.belongsToMany(models.track, {
-      through: 'track',
-    });
+    Album.belongsTo(models.user);
   };
   return Album;
 };

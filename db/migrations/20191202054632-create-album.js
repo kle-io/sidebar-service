@@ -7,18 +7,10 @@ module.exports = {
       primaryKey: true,
       type: Sequelize.INTEGER,
     },
-    cover: {
-      type: Sequelize.STRING,
-    },
-    type: {
-      type: Sequelize.STRING,
-    },
-    title: {
-      type: Sequelize.STRING,
-    },
-    year: {
-      type: Sequelize.INTEGER,
-    },
+    cover: Sequelize.STRING,
+    type: Sequelize.STRING,
+    title: Sequelize.STRING,
+    year: Sequelize.INTEGER,
   }),
   down: (queryInterface) => queryInterface.dropTable('albums'),
 };

@@ -6,18 +6,10 @@ module.exports = {
       primaryKey: true,
       type: Sequelize.STRING,
     },
-    fullName: {
-      type: Sequelize.STRING,
-    },
-    followers: {
-      type: Sequelize.INTEGER,
-    },
-    avatar: {
-      type: Sequelize.STRING,
-    },
-    location: {
-      type: Sequelize.STRING,
-    },
+    fullName: Sequelize.STRING,
+    followers: Sequelize.INTEGER,
+    avatar: Sequelize.STRING,
+    location: Sequelize.STRING,
   }),
   down: (queryInterface) => queryInterface.dropTable('users'),
 };

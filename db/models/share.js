@@ -1,7 +1,13 @@
 
 module.exports = (sequelize, DataTypes) => {
   const Share = sequelize.define('share', {
-    username: {
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+      allowNull: false,
+    },
+    userUsername: {
       type: DataTypes.STRING,
       allowNull: false,
       reference: {
@@ -20,5 +26,9 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     timestamps: false,
   });
+  Share.associate = (models) => {
+    Share.belongsTo(models.track);
+    Share.belongsTo(models.user);
+  };
   return Share;
 };
