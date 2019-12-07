@@ -73,6 +73,11 @@ const Title = styled.div`
   display: flex;
   align-items: flex-start;
   font-size: 14px;
+  width: 240px
+
+  .truncate {
+    width: 240px
+  }
 
   &:before, &:after {
     content: '';
@@ -87,17 +92,26 @@ const Title = styled.div`
     height: 1.3em;
     float: left;
     color: #333;
-    max-width: 100%,
+    width: 240px;
     font-weight: 100;
     box-sizing: border-box;
+  }
+
+  a span {
+    display: inline-block;
+    padding: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: break-word;
+    width: 240px;
   }
 `;
 
 const Username = styled.div`
   font-weight: 100;
   color: #999;
-  overflow: hidden;
-  white-space: nowarp;
+  white-space: nowrap;
   text-overflow: ellipsis;
   word-break: normal;
   font-size: 14px;
