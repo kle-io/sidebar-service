@@ -16,10 +16,8 @@ const CompactListItem = styled.li`
   left: -6px;
 `;
 
-// data passed in as props from Sidebar comp
 const BadgeList = ({ related, data }) => (
   <List>
-    {/* TODO: loop through the items given */}
     {data.map((item) => (
       <CompactListItem>
         {related ? <SongBadge track={item} /> : <SetBadge set={item} />}
