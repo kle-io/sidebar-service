@@ -13,7 +13,9 @@ const Box = styled.div`
 export default () => (
   <Wrapper>
     <article>
-      <Box />
+      <a href="/">
+        <Box />
+      </a>
     </article>
   </Wrapper>
 );

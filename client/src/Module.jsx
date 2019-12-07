@@ -29,6 +29,13 @@ const Header = styled.h3`
   line-height: 24px;
   color: #999;
   font-weight: 100;
+
+  a, a:visited {
+    color: #999;
+  }
+  a:hover {
+    color: #333;
+  }
 `;
 
 const Icon = styled.span`
@@ -37,7 +44,7 @@ const Icon = styled.span`
   background-position: 50%;
   background-size: contain;
   height: 18px;
-  width: 24px;
+  width: 16px;
   margin-right: 6px;
   display: inline-block;
 `;
@@ -62,7 +69,7 @@ const Module = ({ title, children, count }) => (
           </span>
         </Header>
         <Header>
-          <span>View all</span>
+          <a href="/">View all</a>
         </Header>
       </Link>
       <Content>
