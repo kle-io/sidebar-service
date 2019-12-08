@@ -10,21 +10,13 @@ module.exports = (sequelize, DataTypes) => {
     title: DataTypes.STRING,
     likes: DataTypes.INTEGER,
     reposts: DataTypes.INTEGER,
+    userUsername: DataTypes.STRING,
   }, {
     timestamps: false,
   });
   Playlist.associate = (models) => {
-    // associations can be defined here
-    Playlist.belongsToMany(models.track, {
-      through: {
-        model: models.playlistTrack,
-        unique: false,
-      },
-      foreignKey: 'playlistId',
-      constraints: false,
-    });
-    // TODO: switch to belongsToMany
-    // Playlist.hasMany(models.track);
+    Playlist.belongsToMany(models.track, { through: 'playlistTrack' });
+    Playlist.belongsTo(models.user);
   };
   return Playlist;
 };

@@ -1,24 +1,14 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => queryInterface.createTable('favorites', {
-    username: {
-      type: Sequelize.STRING,
-      references: {
-        model: 'users',
-        key: 'username',
-      },
-      onUpdate: 'cascade',
-      onDelete: 'cascade',
-    },
-    trackId: {
+    id: {
       type: Sequelize.INTEGER,
-      references: {
-        model: 'tracks',
-        key: 'id',
-      },
-      onUpdate: 'cascade',
-      onDelete: 'cascade',
+      primaryKey: true,
+      autoIncrement: true,
+      allowNull: false,
     },
+    userUsername: Sequelize.STRING,
+    trackId: Sequelize.INTEGER,
   }),
   down: (queryInterface) => queryInterface.dropTable('favorites'),
 };

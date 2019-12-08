@@ -7,18 +7,11 @@ module.exports = {
       primaryKey: true,
       type: Sequelize.INTEGER,
     },
-    title: {
-      type: Sequelize.STRING,
-    },
-    likes: {
-      type: Sequelize.INTEGER,
-    },
-    reposts: {
-      type: Sequelize.INTEGER,
-    },
-    cover: {
-      type: Sequelize.STRING,
-    },
+    title: Sequelize.STRING,
+    likes: Sequelize.INTEGER,
+    reposts: Sequelize.INTEGER,
+    cover: Sequelize.STRING,
+    userUsername: Sequelize.STRING,
   }),
   down: (queryInterface) => queryInterface.dropTable('playlists'),
 };
