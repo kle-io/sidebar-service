@@ -79,6 +79,7 @@ SongContent.propTypes = {
     reposts: PropTypes.number,
     albumId: PropTypes.number,
     userUsername: PropTypes.string,
+    user: PropTypes.object,
   }).isRequired,
 };
 

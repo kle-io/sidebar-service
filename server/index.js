@@ -10,7 +10,7 @@ app.use('/', express.static(path.join(__dirname, 'public')));
 app.get('/api/tracks/:id', (req, res) => {
   db.track.findOne({
     where: { id: req.params.id },
-    include: [{ all: true }],
+    include: [{ all: true, nested: true }],
   }).then((data) => res.send(data));
 });
 

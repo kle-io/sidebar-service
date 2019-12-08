@@ -3,6 +3,7 @@ import styled from 'styled-components';
 const Wrapper = styled.div`
   margin-top: 4px;
   overflow: hidden;
+  min-height: 13px;
 
   &:before, &:after {
     content: '';
@@ -104,7 +105,6 @@ const Title = styled.div`
     text-overflow: ellipsis;
     white-space: nowrap;
     word-break: break-word;
-    width: 240px;
   }
 `;
 
@@ -120,6 +120,10 @@ const Username = styled.div`
 
   a {
     color: #999;
+  }
+
+  a:hover {
+    color: #333;
   }
 `;
 

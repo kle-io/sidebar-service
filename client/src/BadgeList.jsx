@@ -14,6 +14,7 @@ const CompactListItem = styled.li`
   padding: 5px 0;
   margin-right: -6px;
   left: -6px;
+  display: inline-block;
 `;
 
 const BadgeList = ({ related, data }) => (

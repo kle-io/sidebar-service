@@ -7,6 +7,7 @@ import {
   Username,
 } from './StyledContent';
 import { formatCount } from '../lib';
+import UserDialog from './UserDialog';
 
 const Playlist = ({ data }) => (
   <>
@@ -14,7 +15,13 @@ const Playlist = ({ data }) => (
       <Title>
         <div className="truncate">
           <Username>
-            <a href="/"><span>{data.username}</span></a>
+            <a href="/">
+              <span>
+                <UserDialog data={data.user}>
+                  {data.userUsername}
+                </UserDialog>
+              </span>
+            </a>
           </Username>
           <a href="/"><span>{data.title}</span></a>
         </div>
@@ -43,7 +50,7 @@ Playlist.propTypes = {
   data: PropTypes.shape({
     id: PropTypes.number,
     title: PropTypes.string,
-    username: PropTypes.string,
+    userUsername: PropTypes.string,
     cover: PropTypes.string,
     likes: PropTypes.number,
     reposts: PropTypes.number,
