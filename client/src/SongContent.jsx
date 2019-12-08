@@ -24,7 +24,7 @@ class SongContent extends Component {
           <Title>
             <div>
               <Username>
-                <a href="/"><span>{track.artist}</span></a>
+                <a href="/"><span>{track.userUsername}</span></a>
               </Username>
               <a href="/">{track.title}</a>
             </div>
@@ -78,7 +78,7 @@ SongContent.propTypes = {
     comments: PropTypes.number,
     reposts: PropTypes.number,
     albumId: PropTypes.number,
-    artist: PropTypes.string,
+    userUsername: PropTypes.string,
   }).isRequired,
 };
 

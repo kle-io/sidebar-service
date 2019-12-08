@@ -36,7 +36,7 @@ SetBadge.propTypes = {
       id: PropTypes.number,
       title: PropTypes.string,
       cover: PropTypes.string,
-      artist: PropTypes.string,
+      userUsername: PropTypes.string,
       type: PropTypes.string,
       year: PropTypes.number,
     }),

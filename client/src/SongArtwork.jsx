@@ -48,7 +48,7 @@ SongArtwork.propTypes = {
     comments: PropTypes.number,
     reposts: PropTypes.number,
     albumId: PropTypes.number,
-    artist: PropTypes.string,
+    userUsername: PropTypes.string,
   }).isRequired,
 };
 

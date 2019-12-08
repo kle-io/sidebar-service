@@ -12,7 +12,7 @@ const Album = ({ data }) => (
       <Title>
         <div>
           <Username>
-            <a href="/"><span>{data.artist}</span></a>
+            <a href="/"><span>{data.userUsername}</span></a>
           </Username>
           <a href="/"><span>{data.title}</span></a>
         </div>
@@ -33,7 +33,7 @@ Album.propTypes = {
     id: PropTypes.number,
     title: PropTypes.string,
     cover: PropTypes.string,
-    artist: PropTypes.string,
+    userUsername: PropTypes.string,
     type: PropTypes.string,
     year: PropTypes.number,
   }),
