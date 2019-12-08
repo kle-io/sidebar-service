@@ -3,6 +3,9 @@ const path = require('path');
 const db = require('../db/models');
 
 const app = express();
+app.use('/', express.static(path.resolve(__dirname, '..', 'public')));
+app.use(express.json());
+
 app.use('/', express.static(path.join(__dirname, 'public')));
 app.get('/api/tracks/:id', (req, res) => {
   db.track.findOne({

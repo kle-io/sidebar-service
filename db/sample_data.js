@@ -15479,6 +15479,8 @@ module.exports = {
       userUsername: 'Alexys1',
       trackId: 76,
     },
+  ],
+  playlists: [
     {
       userUsername: 'Pamela_Schiller35',
       trackId: 90,
@@ -15679,6 +15681,8 @@ module.exports = {
       userUsername: 'Finn.McClure',
       trackId: 22,
     },
+  ],
+  playlistTracks: [
     {
       userUsername: 'Deja37',
       trackId: 3,
@@ -15770,6 +15774,7 @@ module.exports = {
     {
       userUsername: 'Nova_Vandervort57',
       trackId: 93,
+      playlistId: 6,
     },
     {
       userUsername: 'Alexys1',
@@ -15994,6 +15999,7 @@ module.exports = {
     {
       userUsername: 'Estel.Ortiz84',
       trackId: 44,
+      playlistId: 49,
     },
     {
       userUsername: 'Justine_Kuhlman95',
@@ -16050,6 +16056,7 @@ module.exports = {
     {
       userUsername: 'Trace_Considine',
       trackId: 22,
+      playlistId: 28,
     },
     {
       userUsername: 'Lavern.Schultz',
@@ -16179,6 +16186,8 @@ module.exports = {
       userUsername: 'Sid69',
       trackId: 85,
     },
+  ],
+  favorites: [
     {
       userUsername: 'Nova_Vandervort57',
       trackId: 85,

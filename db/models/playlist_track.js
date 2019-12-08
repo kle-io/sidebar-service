@@ -8,19 +8,9 @@ module.exports = (sequelize, DataTypes) => {
     },
     playlistId: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-      reference: {
-        model: 'playlist',
-        key: 'id',
-      },
     },
     trackId: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-      reference: {
-        model: 'track',
-        key: 'id',
-      },
     },
   }, { timestamps: false });
   PlaylistTrack.associate = (models) => {
