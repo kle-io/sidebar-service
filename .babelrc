@@ -2,12 +2,14 @@
   "env": {
     "test": {
       "presets": [
-        ["@babel/preset-env",
-        {
-          "targets": {
-            "node": "current"
+        [
+          "@babel/preset-env",
+          {
+            "targets": {
+              "node": "current"
+            }
           }
-        }],
+        ],
         "@babel/preset-react"
       ],
       "plugins": [
@@ -16,13 +18,19 @@
     },
     "development": {
       "presets": [
-        ["@babel/preset-env",
-        {
-          "targets": {
-            "node": "current"
+        [
+          "@babel/preset-env",
+          {
+            "targets": {
+              "node": "current"
+            }
           }
-        }],
-        "@babel/preset-react"
+        ],
+        "@babel/preset-react",
+        "airbnb"
+      ],
+      "plugins": [
+        "babel-plugin-styled-components"
       ]
     }
   }

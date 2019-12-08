@@ -31,6 +31,9 @@ module.exports = {
     albumId: {
       type: Sequelize.INTEGER,
     },
+    artist: {
+      type: Sequelize.STRING,
+    },
   }),
   down: (queryInterface) => queryInterface.dropTable('tracks'),
 };
