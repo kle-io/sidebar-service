@@ -11,6 +11,7 @@ module.exports = {
     type: Sequelize.STRING,
     title: Sequelize.STRING,
     year: Sequelize.INTEGER,
+    userUsername: Sequelize.STRING,
   }),
   down: (queryInterface) => queryInterface.dropTable('albums'),
 };

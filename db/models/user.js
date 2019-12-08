@@ -13,8 +13,8 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: false,
   });
   User.associate = (models) => {
-    User.belongsToMany(models.track, { through: 'favorite' });
-    User.belongsToMany(models.track, { through: 'share' });
+    User.belongsToMany(models.track, { as: 'UserFavorite', through: 'favorite' });
+    User.belongsToMany(models.track, { as: 'UserShare', through: 'share' });
   };
   return User;
 };

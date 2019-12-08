@@ -1,8 +1,15 @@
 const express = require('express');
-const app = express();
 const path = require('path');
+const db = require('../db/models');
 
+const app = express();
 app.use('/', express.static(path.join(__dirname, 'public')));
-// app.get('/', (req, res) => res.send('Hello World'))
+app.get('/api/tracks/:id', (req, res) => {
+  db.track.findOne({
+    where: { id: req.params.id },
+    include: [{ all: true }],
+  }).then((data) => res.send(data));
+});
+
 const PORT = 3000;
-app.listen(PORT, () => console.log(`Server listening on port ${PORT}`))
+app.listen(PORT, () => console.log(`Server listening on port ${PORT}`));

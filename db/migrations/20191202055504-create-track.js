@@ -15,7 +15,8 @@ module.exports = {
     comments: Sequelize.INTEGER,
     reposts: Sequelize.INTEGER,
     albumId: Sequelize.INTEGER,
-    userUsername: Sequelize.INTEGER,
+    plays: Sequelize.INTEGER,
+    userUsername: Sequelize.STRING,
   }),
   down: (queryInterface) => queryInterface.dropTable('tracks'),
 };
