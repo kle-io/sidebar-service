@@ -22,6 +22,20 @@ const Container = styled.div`
   height: 100%;
   width: 1180px;
   padding: 46px 0 30px;
+
+  @media (max-width: 1239px) {
+    & {
+      width: 1020px;
+    }
+   }
+
+   @media (max-width: 1079px) {
+    & {
+      width: 920px;
+      padding: 0 20px;
+    }
+   }
+
 `;
 
 const Hero = styled.div`
@@ -36,7 +50,7 @@ const Wrapper = styled.div`
 
 const About = styled.div`
   margin-right: 330px;
-  width: 850px;
+  max-width: 850px;
   border-right: 1px solid #f2f2f2;
   height: 100%;
   `;
