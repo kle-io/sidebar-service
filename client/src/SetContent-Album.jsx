@@ -16,7 +16,7 @@ const Album = ({ data }) => (
             <a href="/">
               <span>
                 <UserDialog data={data.user}>
-                  {data.userUsername}
+                  {data.user.fullName}
                 </UserDialog>
               </span>
             </a>
