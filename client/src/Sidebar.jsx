@@ -46,12 +46,16 @@ class Sidebar extends React.Component {
         <Module title="Related tracks">
           <BadgeList data={trackrs} related />
         </Module>
-        <Module title="In albums">
-          <BadgeList data={[track.album]} />
-        </Module>
-        <Module title="In playlists">
-          <BadgeList data={playlists} />
-        </Module>
+        {track.album && (
+          <Module title="In albums">
+            <BadgeList data={[track.album]} />
+          </Module>
+        )}
+        {playlists && (
+          <Module title="In playlists">
+            <BadgeList data={playlists} />
+          </Module>
+        )}
         {/* TODO: Pass in UserList */}
         <Module count={10001} title="likes" />
         <Module count={435882} title="reposts" />
