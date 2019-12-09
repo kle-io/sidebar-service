@@ -24,5 +24,8 @@ coverage
 build/
 dist/
 
+# Webpack Bundle
+public/app.js
+
 # VSCode Settings
 .vscode/
