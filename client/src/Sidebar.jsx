@@ -34,6 +34,7 @@ class Sidebar extends React.Component {
     fetch(`http://localhost:3005/api/tracks/${trackId}`)
       .then((res) => res.json())
       .then((data) => this.setState({ track: data }))
+      // eslint-disable-next-line no-console
       .catch((err) => console.error(err));
   }
 

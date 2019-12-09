@@ -54,6 +54,7 @@ Playlist.propTypes = {
     cover: PropTypes.string,
     likes: PropTypes.number,
     reposts: PropTypes.number,
+    user: PropTypes.object,
   }),
 };
 

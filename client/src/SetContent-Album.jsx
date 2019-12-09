@@ -43,6 +43,7 @@ Album.propTypes = {
     userUsername: PropTypes.string,
     type: PropTypes.string,
     year: PropTypes.number,
+    user: PropTypes.object,
   }),
 };
 
