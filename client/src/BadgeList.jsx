@@ -14,6 +14,7 @@ const CompactListItem = styled.li`
   padding: 5px 0;
   margin-right: -6px;
   left: -6px;
+  display: inline-block;
 `;
 
 const BadgeList = ({ related, data }) => (
@@ -34,18 +35,19 @@ BadgeList.propTypes = {
       title: PropTypes.string,
       songURL: PropTypes.string,
       genre: PropTypes.string,
+      plays: PropTypes.number,
       cover: PropTypes.string,
       likes: PropTypes.number,
       comments: PropTypes.number,
       reposts: PropTypes.number,
       albumId: PropTypes.number,
-      artist: PropTypes.string,
+      userUsername: PropTypes.string,
     }),
     PropTypes.shape({
       id: PropTypes.number,
       title: PropTypes.string,
       cover: PropTypes.string,
-      artist: PropTypes.string,
+      userUsername: PropTypes.string,
       type: PropTypes.string,
       year: PropTypes.number,
     }),

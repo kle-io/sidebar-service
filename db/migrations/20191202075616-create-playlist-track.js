@@ -1,24 +1,14 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => queryInterface.createTable('playlistTracks', {
-    playlistId: {
+    id: {
       type: Sequelize.INTEGER,
-      references: {
-        model: 'playlists',
-        key: 'id',
-      },
-      onUpdate: 'cascade',
-      onDelete: 'cascade',
+      primaryKey: true,
+      autoIncrement: true,
+      allowNull: false,
     },
-    trackId: {
-      type: Sequelize.INTEGER,
-      references: {
-        model: 'tracks',
-        key: 'id',
-      },
-      onUpdate: 'cascade',
-      onDelete: 'cascade',
-    },
+    playlistId: Sequelize.INTEGER,
+    trackId: Sequelize.INTEGER,
   }),
   down: (queryInterface) => queryInterface.dropTable('playlistTracks'),
 };

@@ -5,6 +5,7 @@ import {
   Title,
   Username,
 } from './StyledContent';
+import UserDialog from './UserDialog';
 
 const Album = ({ data }) => (
   <>
@@ -12,7 +13,13 @@ const Album = ({ data }) => (
       <Title>
         <div>
           <Username>
-            <a href="/"><span>{data.artist}</span></a>
+            <a href="/">
+              <span>
+                <UserDialog data={data.user}>
+                  {data.user.fullName}
+                </UserDialog>
+              </span>
+            </a>
           </Username>
           <a href="/"><span>{data.title}</span></a>
         </div>
@@ -33,9 +40,10 @@ Album.propTypes = {
     id: PropTypes.number,
     title: PropTypes.string,
     cover: PropTypes.string,
-    artist: PropTypes.string,
+    userUsername: PropTypes.string,
     type: PropTypes.string,
     year: PropTypes.number,
+    user: PropTypes.object,
   }),
 };
 

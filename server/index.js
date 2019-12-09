@@ -6,13 +6,13 @@ const app = express();
 app.use('/', express.static(path.resolve(__dirname, '..', 'public')));
 app.use(express.json());
 
+app.use('/', express.static(path.join(__dirname, 'public')));
 app.get('/api/tracks/:id', (req, res) => {
-  db.playlist.findOne({
+  db.track.findOne({
     where: { id: req.params.id },
-    include: [{ model: db.track, through: db.playlistTrack }],
-  })
-    .then((track) => res.json(track));
+    include: [{ all: true, nested: true }],
+  }).then((data) => res.send(data));
 });
 
-const PORT = 3000;
+const PORT = 3005;
 app.listen(PORT, () => console.log(`Server listening on port ${PORT}`));
