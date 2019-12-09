@@ -14,52 +14,66 @@ class UserDialog extends Component {
     this.state = {
       isMousedOver: false,
       position: [],
+      style: {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+      }
     };
 
+    this.userNameSpan = React.createRef();
+
     this.handleFocus = this.handleFocus.bind(this);
+    this.handleLeave = this.handleLeave.bind(this);
   }
 
-  handleFocus(event) {
-    const { isMousedOver } = this.state;
+  handleFocus() {
+    this.setState({ isMousedOver: true });
+  }
 
-    const posX = event.clientX;
-    const posY = event.clientY + 180;
-    this.setState({
-      isMousedOver: !isMousedOver,
-      position: [posX, posY],
-    });
+  handleLeave() {
+    this.setState({ isMousedOver: false });
   }
 
   render() {
     const { children, data: userData } = this.props;
     const { isMousedOver, position } = this.state;
     return (
-      <div
-        onMouseOver={(e) => {
-          e.preventDefault();
-          this.handleFocus(e);
-        }}
-        onFocus={(e) => {
-          e.preventDefault();
-          this.handleFocus(e);
-        }}
-        onMouseOut={(e) => {
-          e.preventDefault();
-          this.handleFocus(e);
-        }}
-        onBlur={(e) => {
-          e.preventDefault();
-          this.handleFocus(e);
-        }}
-      >
+      <>
         <DialogContainer>
-
-          {children}
-
+          <div
+            onMouseEnter={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              this.handleFocus();
+            }}
+            onFocus={(e) => {
+              e.preventDefault();
+              this.handleFocus();
+            }}
+            onMouseLeave={(e) => {
+              e.preventDefault();
+              this.handleLeave();
+            }}
+            onBlur={(e) => {
+              e.preventDefault();
+              this.handleLeave();
+            }}
+          >
+            <span ref={this.userNameSpan}>
+              {children}
+            </span>
+          </div>
         </DialogContainer>
-
-        {isMousedOver && <UserCard data={userData} position={position} />}
-      </div>
+        {isMousedOver && (
+          <UserCard
+            data={userData}
+            position={position}
+            handleFocus={this.handleFocus}
+            handleLeave={this.handleLeave}
+          />
+        )}
+      </>
     );
   }
 }
@@ -67,7 +81,6 @@ class UserDialog extends Component {
 UserDialog.propTypes = {
   children: PropTypes.element.isRequired,
   data: PropTypes.shape({
-
   }).isRequired,
 };
 

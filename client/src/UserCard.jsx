@@ -2,16 +2,17 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { formatCount } from '../lib';
+import UserCardButton from './UserCardButton';
 
-// card
 const Card = styled.div`
   box-sizing: border-box;
   outline: none;
   width: 150px;
   min-height: 199px;
   position: absolute;
-  top: ${(props) => props.position[1]}px;
-  left: 35px;
+  top: 25px;
+  left: 0;
+  // left: ${({ position }) => position[0]}px;
   padding: 10px;
   border: 1px solid #ccc;
   background: #fff;
@@ -49,7 +50,6 @@ const CardContent = styled.div`
 
 `;
 
-// avatar
 const Avatar = styled.a`
     &&& {
     display:block;
@@ -68,7 +68,6 @@ const ImageContainer = styled.div`
   position: relative;
 `;
 
-// Image
 const Image = styled.span`
   border-radius: 50%;
   background-image: url(${(props) => props.url});
@@ -91,7 +90,6 @@ const DescriptionContainer = styled.div`
   }
 `;
 
-// followers
 const StatsContainer = styled.div`
   margin-bottom: 4px;
 
@@ -129,7 +127,6 @@ const StatsContainer = styled.div`
   }
 `;
 
-// location
 const LocationContainer = styled.div`
   font-size: 12px;
   font-weight: 100;
@@ -139,9 +136,6 @@ const LocationContainer = styled.div`
     margin: 0 0 10px;
   }
 `;
-
-// button
-// update style props on click
 
 // tooltip
 
@@ -155,8 +149,9 @@ class UserCard extends Component {
       followers: data.followers,
       followed: false,
     };
-  }
 
+    this.handleClick = this.handleClick.bind(this);
+  }
 
   handleClick() {
     const { followed } = this.state;
@@ -171,11 +166,13 @@ class UserCard extends Component {
   }
 
   render() {
-    const { data, position } = this.props;
+    const { data, position, handleFocus, handleLeave } = this.props;
     const { followers } = this.state;
     return (
       <Card
         position={position}
+        onMouseEnter={(e) => handleFocus(e)}
+        onMouseLeave={handleLeave}
       >
         <Arrow />
         <CardContent>
@@ -199,7 +196,7 @@ class UserCard extends Component {
           <LocationContainer>
             <p>{data.location}</p>
           </LocationContainer>
-
+          <UserCardButton handleFollowersCount={this.handleClick} />
         </CardContent>
       </Card>
     );

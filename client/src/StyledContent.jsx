@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 const Wrapper = styled.div`
   margin-top: 4px;
-  overflow: hidden;
   min-height: 13px;
 
   &:before, &:after {
@@ -110,6 +109,8 @@ const Title = styled.div`
 
 const Username = styled.div`
   font-weight: 100;
+  height: 100%;
+  width: 100%;
   color: #999;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -117,6 +118,11 @@ const Username = styled.div`
   font-size: 14px;
   line-height: 1;
   margin: 0 0 2px;
+  position: relative;
+
+  &&& a {
+    position: relative;
+  }
 
   a {
     color: #999;
