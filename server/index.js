@@ -14,5 +14,5 @@ app.get('/api/tracks/:id', (req, res) => {
   }).then((data) => res.send(data));
 });
 
-const PORT = 3000;
+const PORT = 3005;
 app.listen(PORT, () => console.log(`Server listening on port ${PORT}`));
