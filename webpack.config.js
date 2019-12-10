@@ -4,7 +4,6 @@ const SRC_DIR = 'client/src';
 const DIST_DIR = 'public';
 
 module.exports = {
-  mode: 'development',
   entry: path.resolve(__dirname, SRC_DIR, 'index.jsx'),
   output: {
     path: path.resolve(__dirname, DIST_DIR),
