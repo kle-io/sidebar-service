@@ -16,7 +16,7 @@ app.all('*', (req, res, next) => {
   next();
 });
 
-app.get('/api/tracks/:id', (req, res) => {
+app.get('/api/sidebar/tracks/:id', (req, res) => {
   db.track.findOne({
     where: { id: req.params.id },
     include: [{ all: true, nested: true }],
