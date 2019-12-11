@@ -23,5 +23,5 @@ app.get('/api/sidebar/tracks/:id', (req, res) => {
   }).then((data) => res.send(data));
 });
 
-const PORT = 3005;
+const PORT = 3004;
 app.listen(PORT, () => console.log(`Server listening on port ${PORT}`));
