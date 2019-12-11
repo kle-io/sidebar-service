@@ -16,12 +16,12 @@ app.all('*', (req, res, next) => {
   next();
 });
 
-app.get('/api/tracks/:id', (req, res) => {
+app.get('/api/sidebar/tracks/:id', (req, res) => {
   db.track.findOne({
     where: { id: req.params.id },
     include: [{ all: true, nested: true }],
   }).then((data) => res.send(data));
 });
 
-const PORT = 3005;
+const PORT = 3004;
 app.listen(PORT, () => console.log(`Server listening on port ${PORT}`));
