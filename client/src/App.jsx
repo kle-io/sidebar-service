@@ -59,7 +59,6 @@ export default () => (
   <div>
     <GlobalStyle />
     <Container>
-      <Hero />
       <Wrapper>
         <About />
         <Sidebar />
