@@ -10,8 +10,9 @@
     "start": "node server/index.js",
     "dev": "webpack --mode development -d --watch",
     "build": "webpack -p",
-    "db:seed": "npx sequelize db:seed:all",
-    "db:setup": "npx sequelize db:create && npx sequelize db:migrate && npm run db:seed",
+    "predb:setup": "npx sequelize init",
+    "db:setup": "npx sequelize db:create && npx sequelize db:migrate",
+    "postdb:setup": "npx sequelize db:seed:all",
     "lint": "npx eslint client/src/*",
     "test": "npx jest",
     "test:coverage": "npm test -- --coverage"
