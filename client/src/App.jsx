@@ -19,48 +19,22 @@ const GlobalStyle = createGlobalStyle`
 
 const Container = styled.div`
   margin: auto;
-  height: 100%;
-  width: 1180px;
+  height: auto;
+  width: 330px;
   padding: 46px 0 30px;
-
-  @media (max-width: 1239px) {
-    & {
-      width: 1020px;
-    }
-   }
-
-   @media (max-width: 1079px) {
-    & {
-      width: 920px;
-      padding: 0 20px;
-    }
-   }
-
-`;
-
-const Hero = styled.div`
-  height: 380px;
 `;
 
 const Wrapper = styled.div`
   position: relative;
   padding-top: 20px;
-  height: 100vh;
+  height: inherit;
 `;
-
-const About = styled.div`
-  margin-right: 330px;
-  max-width: 850px;
-  border-right: 1px solid #f2f2f2;
-  height: 100%;
-  `;
 
 export default () => (
   <div>
     <GlobalStyle />
     <Container>
       <Wrapper>
-        <About />
         <Sidebar />
       </Wrapper>
     </Container>

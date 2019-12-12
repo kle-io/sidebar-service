@@ -6,8 +6,6 @@ const app = express();
 app.use('/', express.static(path.resolve(__dirname, '..', 'public')));
 app.use(express.json());
 
-app.use('/', express.static(path.join(__dirname, 'public')));
-
 app.all('*', (req, res, next) => {
   const origin = req.get('origin');
   res.header('Access-Control-Allow-Origin', origin);
