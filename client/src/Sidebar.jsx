@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   position: absolute;
   top: 30px;
   right: 0;
-  height: 100%;
+  height: auto;
 `;
 
 const trackrs = [{
@@ -31,7 +31,7 @@ class Sidebar extends React.Component {
   componentDidMount() {
     const trackId = Math.floor(Math.random() * 100);
 
-    fetch(`http://localhost:3005/api/tracks/${trackId}`)
+    fetch(`/api/sidebar/tracks/${trackId}`)
       .then((res) => res.json())
       .then((data) => this.setState({ track: data }))
       // eslint-disable-next-line no-console

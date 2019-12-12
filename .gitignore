@@ -30,6 +30,5 @@ public/app.js
 # VSCode Settings
 .vscode/
 
-# Config
+# Config dir
 config/
-.aws.json
