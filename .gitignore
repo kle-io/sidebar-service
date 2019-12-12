@@ -29,3 +29,6 @@ public/app.js
 
 # VSCode Settings
 .vscode/
+
+# Config dir
+config/

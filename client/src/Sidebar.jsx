@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   position: absolute;
   top: 30px;
   right: 0;
-  height: 100%;
+  height: auto;
 `;
 
 const trackrs = [{
