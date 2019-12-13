@@ -11,7 +11,6 @@
     "dev": "webpack --mode development -d --watch",
     "build": "webpack -p",
     "deploy": "grunt aws_s3",
-    "predb:setup": "npx sequelize init",
     "db:setup": "npx sequelize db:create && npx sequelize db:migrate",
     "postdb:setup": "npx sequelize db:seed:all",
     "lint": "npx eslint client/src/*",
