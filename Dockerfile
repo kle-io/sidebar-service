@@ -5,7 +5,8 @@ COPY package.json /src/app/
 COPY .sequelizerc /src/app/
 COPY db /src/app/
 
+RUN export NODE_ENV=production
 RUN npm install
 
 COPY . /src/app/
-RUN export NODE_ENV=production
+RUN npm run build

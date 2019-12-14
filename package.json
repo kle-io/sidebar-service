@@ -8,8 +8,8 @@
   },
   "scripts": {
     "start": "node -r dotenv/config server/index.js",
-    "dev": "npx webpack --mode development -d --watch",
-    "build": "npx webpack -p",
+    "dev": "webpack --mode development -d --watch",
+    "build": "webpack -p",
     "deploy": "grunt aws_s3",
     "db:setup": "npx sequelize db:create && npx sequelize db:migrate",
     "postdb:setup": "npx sequelize db:seed:all",
