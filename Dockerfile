@@ -8,6 +8,4 @@ COPY db /src/app/
 RUN npm install
 
 COPY . /src/app/
-RUN npm run build
-
-CMD ["npm", "start"]
+RUN export NODE_ENV=production

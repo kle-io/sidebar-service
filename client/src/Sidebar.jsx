@@ -31,7 +31,7 @@ class Sidebar extends React.Component {
   componentDidMount() {
     const trackId = Math.floor(Math.random() * 100);
 
-    fetch(`/api/sidebar/tracks/${trackId}`)
+    fetch(`/api/sidebar/songs/${trackId}`)
       .then((res) => res.json())
       .then((data) => this.setState({ track: data }))
       // eslint-disable-next-line no-console

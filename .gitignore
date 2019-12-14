@@ -35,3 +35,6 @@ config/
 
 # Docker
 docker-compose.yml
+
+# dotenv
+.env
