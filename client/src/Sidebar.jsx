@@ -54,7 +54,7 @@ class Sidebar extends React.Component {
         )}
         {playlists && (
           <Module title="In playlists">
-            <BadgeList data={playlists} />
+            <BadgeList data={playlists.slice(0, 3)} />
           </Module>
         )}
         {/* TODO: Pass in UserList */}
