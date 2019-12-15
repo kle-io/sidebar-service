@@ -4,9 +4,8 @@ WORKDIR /src/app/
 COPY package.json /src/app/
 COPY .sequelizerc /src/app/
 COPY db /src/app/
+COPY server /src/app/
+COPY public /src/app/
 
 RUN export NODE_ENV=production
-RUN npm install
-
-COPY . /src/app/
-RUN npm run build
+RUN npm install --production
