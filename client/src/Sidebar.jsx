@@ -1,10 +1,10 @@
 import React from 'react';
-import styled from 'styled-components';
+
 import Dashbox from './Dashbox';
 import Module from './Module';
 import BadgeList from './BadgeList';
 
-const Wrapper = styled.div`
+const Wrapper = window.styled.div`
   width: 300px;
   position: absolute;
   top: 30px;

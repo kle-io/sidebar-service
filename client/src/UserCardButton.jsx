@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+
 import PropTypes from 'prop-types';
 
-const Btn = styled.button`
+const Btn = window.styled.button`
   font-size: 11px;
   padding: 2px 9px 2px 8px;
   height: 22px;
@@ -50,7 +50,7 @@ const Btn = styled.button`
   }
 `;
 
-// if selected render different styled component
+// if selected render different window.styled component
 
 class UserCardButton extends Component {
   constructor(props) {
