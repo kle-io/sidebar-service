@@ -10,11 +10,20 @@ const Box = window.styled.div`
   padding: 38px;
 `;
 
+const Image = window.styled.img`
+  padding-top: 1em;
+`;
+
 export default () => (
   <Wrapper>
     <article>
       <a href="/">
-        <Box />
+        <Box>
+          <Image
+            src="https://s3-us-west-1.amazonaws.com/kleio.sidebar/assets/dashbox-pro.png"
+            alt=""
+          />
+        </Box>
       </a>
     </article>
   </Wrapper>

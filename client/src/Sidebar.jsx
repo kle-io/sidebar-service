@@ -7,7 +7,7 @@ import BadgeList from './BadgeList';
 const Wrapper = window.styled.div`
   width: 300px;
   position: absolute;
-  top: 5px;
+  top: 38px;
   right: 15px;
   height: auto;
 `;
