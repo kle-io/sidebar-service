@@ -1,10 +1,12 @@
 const express = require('express');
 const path = require('path');
 const db = require('../db/models');
+const logger = require('morgan');
 
 const app = express();
 app.use('/', express.static(path.resolve(__dirname, '..', 'public')));
 app.use(express.json());
+app.use(logger('tiny'));
 
 app.all('*', (req, res, next) => {
   const origin = req.get('origin');
@@ -14,7 +16,7 @@ app.all('*', (req, res, next) => {
   next();
 });
 
-app.get('/api/sidebar/tracks/:id', (req, res) => {
+app.get('/api/sidebar/songs/:id', (req, res) => {
   db.track.findOne({
     where: { id: req.params.id },
     include: [{ all: true, nested: true }],

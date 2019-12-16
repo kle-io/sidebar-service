@@ -1,14 +1,14 @@
 import React from 'react';
-import styled from 'styled-components';
+
 import Dashbox from './Dashbox';
 import Module from './Module';
 import BadgeList from './BadgeList';
 
-const Wrapper = styled.div`
+const Wrapper = window.styled.div`
   width: 300px;
   position: absolute;
-  top: 30px;
-  right: 0;
+  top: 5px;
+  right: 15px;
   height: auto;
 `;
 
@@ -31,7 +31,7 @@ class Sidebar extends React.Component {
   componentDidMount() {
     const trackId = Math.floor(Math.random() * 100);
 
-    fetch(`/api/sidebar/tracks/${trackId}`)
+    fetch(`/api/sidebar/songs/${trackId}`)
       .then((res) => res.json())
       .then((data) => this.setState({ track: data }))
       // eslint-disable-next-line no-console
@@ -54,7 +54,7 @@ class Sidebar extends React.Component {
         )}
         {playlists && (
           <Module title="In playlists">
-            <BadgeList data={playlists} />
+            <BadgeList data={playlists.slice(0, 3)} />
           </Module>
         )}
         {/* TODO: Pass in UserList */}

@@ -32,3 +32,9 @@ public/app.js
 
 # Config dir
 config/
+
+# Docker
+docker-compose.yml
+
+# dotenv
+.env

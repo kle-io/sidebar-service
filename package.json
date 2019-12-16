@@ -7,11 +7,10 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "start": "node server/index.js",
+    "start": "node -r dotenv/config server/index.js",
     "dev": "webpack --mode development -d --watch",
     "build": "webpack -p",
     "deploy": "grunt aws_s3",
-    "predb:setup": "npx sequelize init",
     "db:setup": "npx sequelize db:create && npx sequelize db:migrate",
     "postdb:setup": "npx sequelize db:seed:all",
     "lint": "npx eslint client/src/*",
@@ -25,7 +24,9 @@
     "testEnvironment": "enzyme"
   },
   "dependencies": {
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "morgan": "^1.9.1",
     "mysql2": "^2.0.1",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",

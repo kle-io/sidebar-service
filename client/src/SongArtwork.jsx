@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 
-const Cover = styled.span`
+
+const Cover = window.styled.span`
   background: transparent 50%/contain no-repeat;
   margin-right: 4px;
   padding: 5px 6px;
@@ -13,7 +13,7 @@ const Cover = styled.span`
   float: left;
   `;
 
-const Image = styled.img`
+const Image = window.styled.img`
   width: 50px;
   height: 50px;
   opacity: 1;

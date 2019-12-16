@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+
 import PropTypes from 'prop-types';
 import { formatCount } from '../lib';
 import UserCardButton from './UserCardButton';
 
-const Card = styled.div`
+const Card = window.styled.div`
   box-sizing: border-box;
   outline: none;
   width: 150px;
@@ -25,7 +25,7 @@ const Card = styled.div`
   }
 `;
 
-const Arrow = styled.div`
+const Arrow = window.styled.div`
   left: 50%;
   margin-left: -4px;
   transform: rotate(45deg);
@@ -41,7 +41,7 @@ const Arrow = styled.div`
   z-index: -1;
 `;
 
-const CardContent = styled.div`
+const CardContent = window.styled.div`
   overflow: hidden;
   box-sizing: border-box;
   margin-bottom: 10px;
@@ -50,7 +50,7 @@ const CardContent = styled.div`
 
 `;
 
-const Avatar = styled.a`
+const Avatar = window.styled.a`
     &&& {
     display:block;
     width: 80px;
@@ -60,7 +60,7 @@ const Avatar = styled.a`
     }
 `;
 
-const ImageContainer = styled.div`
+const ImageContainer = window.styled.div`
   background: none;
   height: 80px;
   width: 80px;
@@ -68,7 +68,7 @@ const ImageContainer = styled.div`
   position: relative;
 `;
 
-const Image = styled.span`
+const Image = window.styled.span`
   border-radius: 50%;
   background-image: url(${(props) => props.url});
   background-repeat: no-repeat;
@@ -80,7 +80,7 @@ const Image = styled.span`
   transition: opacity .2s linear;
 `;
 
-const DescriptionContainer = styled.div`
+const DescriptionContainer = window.styled.div`
   font-size: 14px;
   margin-top: 15px;
   text-align: center;
@@ -90,7 +90,7 @@ const DescriptionContainer = styled.div`
   }
 `;
 
-const StatsContainer = styled.div`
+const StatsContainer = window.styled.div`
   margin-bottom: 4px;
 
   ul.stats-group {
@@ -127,7 +127,7 @@ const StatsContainer = styled.div`
   }
 `;
 
-const LocationContainer = styled.div`
+const LocationContainer = window.styled.div`
   font-size: 12px;
   font-weight: 100;
   color: #999;
