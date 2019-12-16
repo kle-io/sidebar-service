@@ -129,7 +129,7 @@ const Username = window.styled.div`
     color: #999;
   }
 
-  a:hover {
+  &&& a:hover {
     color: #333;
   }
 `;
