@@ -75,15 +75,15 @@ class UserCardButton extends Component {
 
     return (
       <div>
-        <Btn type="button" 
-          className="follow"
+        <Btn
+          type="button"
           selected={selected}
           onClick={(e) => {
             e.preventDefault();
             this.handleClick();
           }}
         >
-          Follow
+          <span className="follow">Follow</span>
         </Btn>
       </div>
     );

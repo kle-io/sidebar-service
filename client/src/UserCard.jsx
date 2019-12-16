@@ -12,7 +12,6 @@ const Card = window.styled.div`
   position: absolute;
   top: 25px;
   left: 0;
-  // left: ${({ position }) => position[0]}px;
   padding: 10px;
   border: 1px solid #ccc;
   background: #fff;

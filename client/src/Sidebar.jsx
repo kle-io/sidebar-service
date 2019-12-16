@@ -4,12 +4,31 @@ import Dashbox from './Dashbox';
 import Module from './Module';
 import BadgeList from './BadgeList';
 
+const Container = window.styled.div`
+  & * {
+    font: 12px/1.4 Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;
+    color: #999;
+  }
+
+  a, a:visited {
+    text-decoration: none;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.3;
+  }
+
+  margin: auto;
+  height: auto;
+  width: 330px;
+`;
+
 const Wrapper = window.styled.div`
   width: 300px;
-  position: absolute;
-  top: 38px;
-  right: 15px;
+  position: relative;
   height: auto;
+  margin: auto;
+  padding-top: 30px;
 `;
 
 const trackrs = [{
@@ -42,25 +61,28 @@ class Sidebar extends React.Component {
     const { track } = this.state;
     const { playlists } = track;
     return (
-      <Wrapper>
-        <Dashbox />
-        <Module title="Related tracks">
-          <BadgeList data={trackrs} related />
-        </Module>
-        {track.album && (
-          <Module title="In albums">
-            <BadgeList data={[track.album]} />
+      <Container>
+
+        <Wrapper>
+          <Dashbox />
+          <Module title="Related tracks">
+            <BadgeList data={trackrs} related />
           </Module>
-        )}
-        {playlists && (
-          <Module title="In playlists">
-            <BadgeList data={playlists.slice(0, 3)} />
-          </Module>
-        )}
-        {/* TODO: Pass in UserList */}
-        <Module count={10001} title="likes" />
-        <Module count={435882} title="reposts" />
-      </Wrapper>
+          {track.album && (
+            <Module title="In albums">
+              <BadgeList data={[track.album]} />
+            </Module>
+          )}
+          {playlists && (
+            <Module title="In playlists">
+              <BadgeList data={playlists.slice(0, 3)} />
+            </Module>
+          )}
+          {/* TODO: Pass in UserList */}
+          <Module count={10001} title="likes" />
+          <Module count={435882} title="reposts" />
+        </Wrapper>
+      </Container>
     );
   }
 }
