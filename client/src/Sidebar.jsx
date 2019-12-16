@@ -3,6 +3,8 @@ import React from 'react';
 import Dashbox from './Dashbox';
 import Module from './Module';
 import BadgeList from './BadgeList';
+import { formatCount } from '../lib';
+import UserList from './UserList';
 
 const Container = window.styled.div`
   & * {
@@ -78,14 +80,20 @@ class Sidebar extends React.Component {
               <BadgeList data={playlists.slice(0, 3)} />
             </Module>
           )}
-          {/* TODO: Pass in UserList */}
-          <Module count={10001} title="likes" />
-          <Module count={435882} title="reposts" />
+          {track.UserFavorite && (
+            <Module count={formatCount(track.likes)} title="likes">
+              <UserList users={track.UserFavorite.slice(0, 9)} />
+            </Module>
+          )}
+          {track.UserShare && (
+            <Module count={formatCount((track.reposts))} title="reposts">
+              <UserList users={track.UserShare.slice(0, 9)} />
+            </Module>
+          )}
         </Wrapper>
       </Container>
     );
   }
 }
-
 
 export default Sidebar;

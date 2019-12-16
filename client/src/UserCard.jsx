@@ -5,13 +5,14 @@ import { formatCount } from '../lib';
 import UserCardButton from './UserCardButton';
 
 const Card = window.styled.div`
+  display: block;
   box-sizing: border-box;
   outline: none;
   width: 150px;
   min-height: 199px;
   position: absolute;
-  top: 25px;
-  left: 0;
+  top: 30px;
+  left: -55px;
   padding: 10px;
   border: 1px solid #ccc;
   background: #fff;
@@ -77,6 +78,7 @@ const Image = window.styled.span`
   height: 80px;
   opacity: 1;
   transition: opacity .2s linear;
+  display: block;
 `;
 
 const DescriptionContainer = window.styled.div`
