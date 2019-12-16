@@ -18,7 +18,6 @@ const Container = window.styled.div`
   margin: auto;
   height: auto;
   width: 330px;
-  padding: 46px 0 30px;
 `;
 
 const Wrapper = window.styled.div`
