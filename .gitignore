@@ -30,9 +30,6 @@ public/app.js
 # VSCode Settings
 .vscode/
 
-# Config dir
-config/
-
 # Docker
 docker-compose.yml
 
