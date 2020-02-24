@@ -1,6 +1,16 @@
 # kleio
 
-> a clone of a Soundcloud song page built with service oriented architecture
+> kleio is a Soundcloud song page clone built with service oriented architecture. Sidebar a service that displays information related to the song on the song page. :metal:
+
+## Data Model
+![Kleio sidebar Entity Relationship Diagram (ERD) image](https://drive.google.com/uc?id=13Titqsh1SvDLD-0WZY6VggmmntJ1tipY)
+
+## Built With
+
+* React.js - JavaScript framework
+* Styled Components - Used to add styles to React Components 
+* MySQL - Used to generate RSS Feeds
+* Sequelize - ODM for connecting Node.js to MySQL
 
 ## Related Projects
 
@@ -15,9 +25,6 @@
 1. [Requirements](#requirements)
 1. [Development](#development)
 
-## Usage
-
-> Some usage instructions
 
 ## Requirements
 
