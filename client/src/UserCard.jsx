@@ -47,7 +47,6 @@ const CardContent = window.styled.div`
   margin-bottom: 10px;
   width: 100%;
   text-align: center;
-
 `;
 
 const Avatar = window.styled.a`
@@ -138,14 +137,11 @@ const LocationContainer = window.styled.div`
   }
 `;
 
-// tooltip
-
 class UserCard extends Component {
   constructor(props) {
     super(props);
 
     const { data } = this.props;
-    // set followers to props.followers
     this.state = {
       followers: data.followers,
       followed: false,
