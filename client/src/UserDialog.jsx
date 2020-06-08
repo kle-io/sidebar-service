@@ -30,7 +30,7 @@ class UserDialog extends Component {
   handleLeave() {
     this.timer = setTimeout(() => {
       this.setState({ isMousedOver: false });
-    }, 250);
+    }, 200);
   }
 
   render() {
