@@ -167,13 +167,15 @@ class UserCard extends Component {
   }
 
   render() {
-    const { data, position, handleFocus, handleLeave } = this.props;
+    const {
+      data, position, handleFocus, handleLeave,
+    } = this.props;
     const { followers } = this.state;
     return (
       <Card
         position={position}
-        onMouseEnter={(e) => handleFocus(e)}
-        onMouseLeave={handleLeave}
+        onMouseEnter={(e) => { handleFocus(e); }}
+        onMouseLeave={() => { handleLeave(); }}
       >
         <Arrow />
         <CardContent>

@@ -2,8 +2,8 @@ module.exports = {
   development: {
     host: 'localhost',
     dialect: 'mysql',
-    username: process.env.MYSQL_USER,
-    password: process.env.MYSQL_PASSWORD,
-    database: process.env.MYSQL_DB,
+    username: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB,
   },
 };

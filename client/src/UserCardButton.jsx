@@ -64,9 +64,9 @@ class UserCardButton extends Component {
   }
 
   handleClick() {
-    const { selected } = this.state;
+    const { selected } = this.state; // Does this make sense?
     const { handleFollowersCount } = this.props;
-    this.setState({ selected: !selected });
+    this.setState((state, props) => ({ selected: !state.selected }));
     handleFollowersCount();
   }
 
