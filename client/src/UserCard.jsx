@@ -28,6 +28,13 @@ class UserCard extends Component {
     this.handleFollowersCount = this.handleFollowersCount.bind(this);
   }
 
+  componentDidMount() {
+    const { data } = this.props;
+    fetch(`/api/sidebar/users/${data.username}`)
+      .then((response) => response.json())
+      .then((user) => { this.setState({ followers: user.followers }); });
+  }
+
   handleFollowersCount(user) {
     const { followed } = this.state;
     let { followers } = this.state;

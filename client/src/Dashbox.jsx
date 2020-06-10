@@ -17,7 +17,7 @@ const Image = window.styled.img`
 export default () => (
   <Wrapper>
     <article>
-      <a href="/">
+      <a href="https://soundcloud.com/rick-astley-official/never-gonna-give-you-up-7">
         <Box>
           <Image
             src="https://s3-us-west-1.amazonaws.com/kleio.sidebar/assets/dashbox-pro.png"

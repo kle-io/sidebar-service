@@ -23,6 +23,14 @@ app.get('/api/sidebar/songs/:id', (req, res) => {
   }).then((data) => res.send(data));
 });
 
+app.get('/api/sidebar/users/:username', (req, res, next) => {
+  db.user.findOne({
+    where: { username: req.params.username },
+  })
+    .then((data) => res.send(data))
+    .catch(next);
+});
+
 app.post('/api/sidebar/users/:username', (req, res, next) => {
   db.user.update({
     followers: req.body.followers,
