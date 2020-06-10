@@ -44,9 +44,9 @@ class UserCardButton extends Component {
   }
 
   handleClick() {
-    const { handleFollowersCount } = this.props;
+    const { handleFollowersCount, username } = this.props;
     this.setState((state) => ({ selected: !state.selected }));
-    handleFollowersCount();
+    handleFollowersCount(username);
   }
 
   render() {

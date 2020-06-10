@@ -25,19 +25,25 @@ class UserCard extends Component {
       followed: false,
     };
 
-    this.handleClick = this.handleClick.bind(this);
+    this.handleFollowersCount = this.handleFollowersCount.bind(this);
   }
 
-  handleClick() {
+  handleFollowersCount(user) {
     const { followed } = this.state;
     let { followers } = this.state;
 
-    // put request
     if (followed) {
       this.setState({ followers: followers -= 1, followed: false });
     } else {
       this.setState({ followers: followers += 1, followed: true });
     }
+
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ followers }),
+    };
+    fetch(`/api/sidebar/users/${user}`, requestOptions);
   }
 
   render() {
@@ -73,7 +79,10 @@ class UserCard extends Component {
           <LocationContainer>
             <p>{data.location}</p>
           </LocationContainer>
-          <UserCardButton handleFollowersCount={this.handleClick} />
+          <UserCardButton
+            handleFollowersCount={this.handleFollowersCount}
+            username={data.username}
+          />
         </CardContent>
       </Card>
     );

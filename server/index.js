@@ -23,5 +23,15 @@ app.get('/api/sidebar/songs/:id', (req, res) => {
   }).then((data) => res.send(data));
 });
 
+app.post('/api/sidebar/users/:username', (req, res, next) => {
+  db.user.update({
+    followers: req.body.followers,
+  }, {
+    where: { username: req.params.username },
+  })
+    .then((data) => res.send(data))
+    .catch(next);
+});
+
 const PORT = 3004;
 app.listen(PORT, () => console.log(`Server listening on port ${PORT}`));
