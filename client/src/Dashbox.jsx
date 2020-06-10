@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const Wrapper = window.styled.div` margin: 0 0 25px; `;
 
 const Box = window.styled.div`
