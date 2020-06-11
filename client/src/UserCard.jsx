@@ -18,46 +18,49 @@ import {
 class UserCard extends Component {
   constructor(props) {
     super(props);
-
     const { data } = this.props;
     this.state = {
       followers: data.followers,
-      followed: false,
+      followed: data.followed,
     };
-
-    this.handleFollowersCount = this.handleFollowersCount.bind(this);
+    this.handleFollow = this.handleFollow.bind(this);
   }
 
   componentDidMount() {
     const { data } = this.props;
     fetch(`/api/sidebar/users/${data.username}`)
       .then((response) => response.json())
-      .then((user) => { this.setState({ followers: user.followers }); });
+      .then((user) => {
+        this.setState({ followers: user.followers, followed: user.followed });
+      });
   }
 
-  handleFollowersCount(user) {
-    const { followed } = this.state;
+  handleFollow() {
     let { followers } = this.state;
-
+    const { followed } = this.state;
+    const { data: { username } } = this.props;
     if (followed) {
-      this.setState({ followers: followers -= 1, followed: false });
+      followers -= 1;
     } else {
-      this.setState({ followers: followers += 1, followed: true });
+      followers += 1;
     }
 
-    const requestOptions = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ followers }),
-    };
-    fetch(`/api/sidebar/users/${user}`, requestOptions);
+    this.setState((state) => ({ followers, followed: !state.followed }), () => {
+      const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(this.state),
+      };
+      fetch(`/api/sidebar/users/${username}`, requestOptions)
+        .then((response) => response.json());
+    });
   }
 
   render() {
     const {
       data, position, handleFocus, handleLeave,
     } = this.props;
-    const { followers } = this.state;
+    const { followers, followed } = this.state;
     return (
       <Card
         position={position}
@@ -87,8 +90,9 @@ class UserCard extends Component {
             <p>{data.location}</p>
           </LocationContainer>
           <UserCardButton
-            handleFollowersCount={this.handleFollowersCount}
+            handleFollow={this.handleFollow}
             username={data.username}
+            selected={followed}
           />
         </CardContent>
       </Card>
@@ -99,11 +103,14 @@ class UserCard extends Component {
 UserCard.propTypes = {
   data: PropTypes.shape({
     avatar: PropTypes.string,
-    userName: PropTypes.string,
+    username: PropTypes.string,
     fullName: PropTypes.string.isRequired,
+    followed: PropTypes.bool,
     followers: PropTypes.number.isRequired,
     location: PropTypes.string,
   }),
+  handleLeave: PropTypes.func.isRequired,
+  handleFocus: PropTypes.func.isRequired,
   position: PropTypes.number.isRequired,
 };
 

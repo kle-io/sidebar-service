@@ -32,12 +32,10 @@ app.get('/api/sidebar/users/:username', (req, res, next) => {
 });
 
 app.post('/api/sidebar/users/:username', (req, res, next) => {
-  db.user.update({
-    followers: req.body.followers,
-  }, {
+  db.user.update(req.body, {
     where: { username: req.params.username },
   })
-    .then((data) => res.send(data))
+    .then((data) => { res.send(data); })
     .catch(next);
 });
 

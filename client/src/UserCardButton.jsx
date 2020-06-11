@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import PropTypes from 'prop-types';
 
@@ -32,45 +32,27 @@ const Btn = window.styled.button`
   }
 `;
 
-class UserCardButton extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      selected: false,
-    };
-
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  handleClick() {
-    const { handleFollowersCount, username } = this.props;
-    this.setState((state) => ({ selected: !state.selected }));
-    handleFollowersCount(username);
-  }
-
-  render() {
-    const { selected } = this.state;
-
-    return (
-      <div>
-        <Btn
-          type="button"
-          selected={selected}
-          onClick={(e) => {
-            e.preventDefault();
-            this.handleClick();
-          }}
-        >
-          <span className="follow">Follow</span>
-        </Btn>
-      </div>
-    );
-  }
-}
+const UserCardButton = (props) => {
+  const { selected } = props;
+  return (
+    <div>
+      <Btn
+        type="button"
+        selected={selected}
+        onClick={(e) => {
+          e.preventDefault();
+          props.handleFollow();
+        }}
+      >
+        <span className="follow">Follow</span>
+      </Btn>
+    </div>
+  );
+};
 
 UserCardButton.propTypes = {
-  handleFollowersCount: PropTypes.func.isRequired,
+  handleFollow: PropTypes.func.isRequired,
+  selected: PropTypes.number.isRequired,
 };
 
 export default UserCardButton;

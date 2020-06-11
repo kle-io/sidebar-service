@@ -3,7 +3,7 @@ module.exports = {
     {
       username: 'Justine_Kuhlman95',
       fullName: 'Claude Heidenreich',
-      followers: 45890,
+      followers: 458900,
       followed: true,
       avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/baliomega/128.jpg',
       location: 'Karinamouth, RI',
@@ -11,7 +11,7 @@ module.exports = {
     {
       username: 'Sid69',
       fullName: 'Loyce Runolfsdottir',
-      followers: 28798,
+      followers: 2879,
       followed: false,
       avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/kazaky999/128.jpg',
       location: 'Schmittborough, NM',
@@ -19,7 +19,7 @@ module.exports = {
     {
       username: 'Lavern.Schultz',
       fullName: 'Rose Morar',
-      followers: 81923,
+      followers: 819,
       followed: true,
       avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/j2deme/128.jpg',
       location: 'West Alba, IA',
@@ -27,7 +27,7 @@ module.exports = {
     {
       username: 'Peggie_Lakin95',
       fullName: 'Renee Kulas',
-      followers: 80597,
+      followers: 8059,
       followed: false,
       avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/gauravjassal/128.jpg',
       location: 'Carachester, OK',
@@ -35,7 +35,7 @@ module.exports = {
     {
       username: 'Grayson.Baumbach47',
       fullName: 'Matilde Kunde',
-      followers: 32477,
+      followers: 3,
       followed: true,
       avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/petar_prog/128.jpg',
       location: 'Mosciskistad, IL',
@@ -43,7 +43,7 @@ module.exports = {
     {
       username: 'Mariano81',
       fullName: 'Reymundo Hammes',
-      followers: 15086,
+      followers: 15,
       followed: false,
       avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/yalozhkin/128.jpg',
       location: 'South Deonbury, KS',
@@ -51,7 +51,7 @@ module.exports = {
     {
       username: 'Asia81',
       fullName: 'Joshua Will',
-      followers: 59511,
+      followers: 5951,
       followed: true,
       avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/rtgibbons/128.jpg',
       location: 'Terryland, MN',
@@ -59,7 +59,7 @@ module.exports = {
     {
       username: 'Nova_Vandervort57',
       fullName: 'Lucio Ankunding',
-      followers: 34043,
+      followers: 340430,
       followed: false,
       avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/swaplord/128.jpg',
       location: 'Brennanview, NE',
@@ -91,7 +91,7 @@ module.exports = {
     {
       username: 'Quentin_Paucek29',
       fullName: 'Heloise Legros',
-      followers: 67318,
+      followers: 6,
       followed: false,
       avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/iamglimy/128.jpg',
       location: 'Deckowbury, NE',
@@ -107,7 +107,7 @@ module.exports = {
     {
       username: 'Vicky90',
       fullName: 'Lupe Emard',
-      followers: 62020,
+      followers: 62,
       followed: false,
       avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/bryan_topham/128.jpg',
       location: 'West Gregoryburgh, CA',
@@ -139,7 +139,7 @@ module.exports = {
     {
       username: 'Estel.Ortiz84',
       fullName: 'Dennis Rogahn',
-      followers: 96208,
+      followers: 9620,
       followed: false,
       avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/stushona/128.jpg',
       location: 'Ryderland, AK',
@@ -147,7 +147,7 @@ module.exports = {
     {
       username: 'Lina41',
       fullName: 'Shayna Schimmel',
-      followers: 30204,
+      followers: 304,
       followed: true,
       avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/mekal/128.jpg',
       location: 'West Nikita, IA',
@@ -163,7 +163,7 @@ module.exports = {
     {
       username: 'German38',
       fullName: "Trenton O'Reilly",
-      followers: 70556,
+      followers: 705,
       followed: true,
       avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/abovefunction/128.jpg',
       location: 'Runolfsdottirberg, VA',
@@ -171,7 +171,7 @@ module.exports = {
     {
       username: 'Korbin_Padberg1',
       fullName: 'Callie Wintheiser',
-      followers: 79750,
+      followers: 7975,
       followed: false,
       avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/happypeter1983/128.jpg',
       location: 'Stephentown, NE',
@@ -187,7 +187,7 @@ module.exports = {
     {
       username: 'Francesco.Howell77',
       fullName: 'Frederic Abbott',
-      followers: 78898,
+      followers: 7889,
       followed: false,
       avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/gregsqueeb/128.jpg',
       location: 'East Bonniestad, AK',
@@ -203,7 +203,7 @@ module.exports = {
     {
       username: 'Janae.Reynolds',
       fullName: 'William Berge',
-      followers: 29036,
+      followers: 290,
       followed: false,
       avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/el_fuertisimo/128.jpg',
       location: 'Satterfieldview, OR',
@@ -211,7 +211,7 @@ module.exports = {
     {
       username: 'Rose.Monahan',
       fullName: 'Ms. Greg Blick',
-      followers: 18819,
+      followers: 1881,
       followed: true,
       avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/r_garcia/128.jpg',
       location: 'Quentinland, ND',
@@ -235,7 +235,7 @@ module.exports = {
     {
       username: 'Everette_Kreiger28',
       fullName: 'Mr. Haylie Grant',
-      followers: 83892,
+      followers: 83,
       followed: false,
       avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/sydlawrence/128.jpg',
       location: 'South Antonio, LA',
@@ -243,7 +243,7 @@ module.exports = {
     {
       username: 'Curtis25',
       fullName: 'Emma Kemmer',
-      followers: 60697,
+      followers: 606,
       followed: true,
       avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/johnsmithagency/128.jpg',
       location: 'New Clovis, KS',
@@ -267,7 +267,7 @@ module.exports = {
     {
       username: 'Cielo40',
       fullName: 'Elouise Jerde DDS',
-      followers: 85701,
+      followers: 8570,
       followed: false,
       avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/kanickairaj/128.jpg',
       location: 'South Janaport, CO',
@@ -275,7 +275,7 @@ module.exports = {
     {
       username: 'Vida.Swaniawski98',
       fullName: 'Verner Emmerich',
-      followers: 56372,
+      followers: 563,
       followed: true,
       avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/stan/128.jpg',
       location: 'Gloverfurt, PA',
@@ -283,7 +283,7 @@ module.exports = {
     {
       username: 'Michelle_Herman12',
       fullName: 'Vicky Cormier',
-      followers: 83379,
+      followers: 8337,
       followed: false,
       avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/rahmeen/128.jpg',
       location: 'New Josianemouth, CT',
@@ -291,7 +291,7 @@ module.exports = {
     {
       username: 'Bruce.Auer',
       fullName: 'Tobin Schmeler',
-      followers: 10778,
+      followers: 107780,
       followed: true,
       avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/layerssss/128.jpg',
       location: 'West Jean, AL',
@@ -307,7 +307,7 @@ module.exports = {
     {
       username: 'Leann_Denesik',
       fullName: 'Hortense Haag',
-      followers: 66734,
+      followers: 667340,
       followed: true,
       avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/martinansty/128.jpg',
       location: 'Mariamfort, IL',
@@ -339,7 +339,7 @@ module.exports = {
     {
       username: 'Vena_Aufderhar64',
       fullName: 'Elna Cronin',
-      followers: 72695,
+      followers: 5,
       followed: true,
       avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/vc27/128.jpg',
       location: 'North Ervin, MD',
@@ -347,7 +347,7 @@ module.exports = {
     {
       username: 'Kevon10',
       fullName: 'Stewart Lindgren',
-      followers: 19877,
+      followers: 1987,
       followed: false,
       avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/hugomano/128.jpg',
       location: 'Jaclynfort, AK',
@@ -355,7 +355,7 @@ module.exports = {
     {
       username: 'Matilda.Kuhic',
       fullName: 'Izabella Emmerich',
-      followers: 38081,
+      followers: 38,
       followed: true,
       avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/sunshinedgirl/128.jpg',
       location: 'North Bennietown, CT',
@@ -363,7 +363,7 @@ module.exports = {
     {
       username: 'Alexys1',
       fullName: 'Alfred Erdman',
-      followers: 57739,
+      followers: 5773,
       followed: false,
       avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/benjamin_knight/128.jpg',
       location: 'Hudsonside, OH',
@@ -387,15 +387,15 @@ module.exports = {
     {
       username: 'Pamela_Schiller35',
       fullName: 'Torrance Corwin',
-      followers: 88849,
+      followers: 8884,
       followed: true,
-      avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/tomaslau/128.jpg',
+      avatar: 'https://s3-us-west-1.amazonaws.com/kleio.sidebar/icons/blue-linear-gradient-purple-151x151.png',
       location: 'Osinskifort, CT',
     },
     {
       username: 'Janis84',
       fullName: 'Maxime Goyette',
-      followers: 93915,
+      followers: 93,
       followed: false,
       avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/kijanmaharjan/128.jpg',
       location: 'West Yessenia, DE',
