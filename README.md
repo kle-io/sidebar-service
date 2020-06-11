@@ -1,22 +1,22 @@
 # kleio
 
-> kleio is a Soundcloud song page clone built with service oriented architecture. Sidebar a service that displays information related to the song on the song page. :metal:
+> kleio is a single page app built with service oriented architecture. Sidebar a service that displays information related to the song on that page. :metal:
 
 ## Data Model
 ![Kleio sidebar Entity Relationship Diagram (ERD) image](https://drive.google.com/uc?id=13Titqsh1SvDLD-0WZY6VggmmntJ1tipY)
 
 ## Built With
 
-* React.js - dynamism
-* Styled Components - styles
-* MariaDB - storage
-* Sequelize - ODM for Node.js
+* React.js - for dynamism
+* Styled Components - for styles
+* MariaDB - for storage
+* Sequelize - for Node.js => DB
 
 ## Related Projects
 
-  - https://github.com/kle-io/main-song-player
-  - https://github.com/kle-io/toolbar
-  - https://github.com/kle-io/Comment-section
+  - (Main Player)[https://github.com/kle-io/main-song-player]
+  - (Toolbar Player)[https://github.com/kle-io/toolbar]
+  - (Comments)[https://github.com/kle-io/Comment-section]
 
 ## Table of Contents
 
