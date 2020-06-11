@@ -7,6 +7,7 @@ import {
   Username,
 } from './StyledContent';
 import { formatCount } from '../lib';
+import UserDialog from './UserDialog';
 
 class SongContent extends Component {
   constructor(props) {
@@ -24,7 +25,13 @@ class SongContent extends Component {
           <Title>
             <div>
               <Username>
-                <a href="/"><span>{track.userUsername}</span></a>
+                <a href="/">
+                  <span>
+                    <UserDialog data={track.user}>
+                      {track.user.fullName}
+                    </UserDialog>
+                  </span>
+                </a>
               </Username>
               <a href="/">{track.title}</a>
             </div>

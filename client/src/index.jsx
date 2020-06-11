@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import App from './App';
+import Sidebar from './Sidebar';
 
-ReactDOM.render(<App />, document.getElementById('sidebar'));
+ReactDOM.render(<Sidebar />, document.getElementById('sidebar'));

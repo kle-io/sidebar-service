@@ -65,7 +65,7 @@ const Module = ({ title, children, count }) => (
           <Icon url={icons[title]} />
           <span>
             { (title === 'likes' || title === 'reposts') && formatCount(count) }
-            { title }
+            { ` ${title}` }
           </span>
         </Header>
         <Header>
@@ -73,7 +73,6 @@ const Module = ({ title, children, count }) => (
         </Header>
       </Link>
       <Content>
-        {/* Content - BadgeList or User Avatar */}
         { children }
       </Content>
     </article>

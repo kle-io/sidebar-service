@@ -7,31 +7,25 @@
 
 ## Built With
 
-* React.js - JavaScript framework
-* Styled Components - Used to add styles to React Components 
-* MySQL - Used to generate RSS Feeds
-* Sequelize - ODM for connecting Node.js to MySQL
+* React.js - dynamism
+* Styled Components - styles
+* MariaDB - storage
+* Sequelize - ODM for Node.js
 
 ## Related Projects
 
   - https://github.com/kle-io/main-song-player
   - https://github.com/kle-io/toolbar
-  - https://github.com/kle-io/sidebar-service
   - https://github.com/kle-io/Comment-section
 
 ## Table of Contents
 
-1. [Usage](#Usage)
 1. [Requirements](#requirements)
-1. [Development](#development)
-
+2. [Development](#development)
 
 ## Requirements
 
 An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
-
-- Node 6.13.0
-- etc
 
 ## Development
 
@@ -40,7 +34,26 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 From within the root directory:
 
 ```sh
-npm install -g webpack
 npm install
 ```
 
+### Configure Environment Variables
+1. Duplicate `.env.example` file
+2. Rename to `.env`
+3. Fill `.env` with RDBMS user and database credentials
+
+### Add Seed Data
+```sh
+npx sequelize init:config
+npm run db:setup
+```
+
+### Create Static JS Bundle
+```sh
+npm run dev
+```
+
+### Start NodeJS Server
+```sh
+npm start
+```

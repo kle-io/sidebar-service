@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
-const db = require('../db/models');
 const logger = require('morgan');
+const db = require('../db/models');
 
 const app = express();
 app.use('/', express.static(path.resolve(__dirname, '..', 'public')));
@@ -18,9 +18,25 @@ app.all('*', (req, res, next) => {
 
 app.get('/api/sidebar/songs/:id', (req, res) => {
   db.track.findOne({
-    where: { id: req.params.id },
+    where: { id: req.params.id || Math.floor(Math.random() * 105) },
     include: [{ all: true, nested: true }],
   }).then((data) => res.send(data));
+});
+
+app.get('/api/sidebar/users/:username', (req, res, next) => {
+  db.user.findOne({
+    where: { username: req.params.username },
+  })
+    .then((data) => res.send(data))
+    .catch(next);
+});
+
+app.post('/api/sidebar/users/:username', (req, res, next) => {
+  db.user.update(req.body, {
+    where: { username: req.params.username },
+  })
+    .then((data) => { res.send(data); })
+    .catch(next);
 });
 
 const PORT = 3004;

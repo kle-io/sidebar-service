@@ -4,6 +4,7 @@ const Wrapper = window.styled.div`
   margin-top: 4px;
   min-height: 13px;
   float: right;
+  width: 300px;
 
   &:before, &:after {
     content: '';
@@ -24,6 +25,7 @@ const Stats = window.styled.ul`
   padding: 0;
 
   li {
+    display: inline-flex;
     font-size: 11px;
     line-height: 12px;
     list-style: none;

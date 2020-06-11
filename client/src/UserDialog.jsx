@@ -14,25 +14,23 @@ class UserDialog extends Component {
     this.state = {
       isMousedOver: false,
       position: [],
-      style: {
-        position: 'absolute',
-        top: 0,
-        left: 0,
-      }
     };
 
     this.userNameSpan = React.createRef();
-
     this.handleFocus = this.handleFocus.bind(this);
     this.handleLeave = this.handleLeave.bind(this);
+    this.timer = null;
   }
 
   handleFocus() {
     this.setState({ isMousedOver: true });
+    if (this.timer) { clearTimeout(this.timer); }
   }
 
   handleLeave() {
-    this.setState({ isMousedOver: false });
+    this.timer = setTimeout(() => {
+      this.setState({ isMousedOver: false });
+    }, 200);
   }
 
   render() {
@@ -47,15 +45,7 @@ class UserDialog extends Component {
               e.stopPropagation();
               this.handleFocus();
             }}
-            onFocus={(e) => {
-              e.preventDefault();
-              this.handleFocus();
-            }}
             onMouseLeave={(e) => {
-              e.preventDefault();
-              this.handleLeave();
-            }}
-            onBlur={(e) => {
               e.preventDefault();
               this.handleLeave();
             }}

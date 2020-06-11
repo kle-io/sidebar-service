@@ -7,6 +7,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     fullName: DataTypes.STRING,
     followers: DataTypes.INTEGER,
+    followed: DataTypes.BOOLEAN,
     avatar: DataTypes.STRING,
     location: DataTypes.STRING,
   }, {
