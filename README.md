@@ -14,9 +14,9 @@
 
 ## Related Projects
 
-  - (Main Player)[https://github.com/kle-io/main-song-player]
-  - (Toolbar Player)[https://github.com/kle-io/toolbar]
-  - (Comments)[https://github.com/kle-io/Comment-section]
+  - [Main Player](https://github.com/kle-io/main-song-player)
+  - [Toolbar Player](https://github.com/kle-io/toolbar)
+  - [Comments](https://github.com/kle-io/Comment-section)
 
 ## Table of Contents
 
