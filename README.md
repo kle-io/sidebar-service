@@ -1,6 +1,6 @@
 # kleio
 
-> kleio is a single page app built with service oriented architecture. Sidebar a service that displays information related to the song on that page. :metal:
+> kleio is a single page music player app built with service oriented architecture. Sidebar is a service for the app that displays related data on the song page. :metal:
 
 ## Data Model
 ![Kleio sidebar Entity Relationship Diagram (ERD) image](https://drive.google.com/uc?id=13Titqsh1SvDLD-0WZY6VggmmntJ1tipY)
@@ -8,9 +8,10 @@
 ## Built With
 
 * React.js - for dynamism
-* Styled Components - for styles
-* MariaDB - for storage
-* Sequelize - for Node.js => DB
+* Styled Components - for style
+* MariaDB/MySQL - for storage
+* Sequelize - for translation
+* A little razzle dazzle :sparkles:
 
 ## Related Services
 
