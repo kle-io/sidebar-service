@@ -12,7 +12,7 @@
 * MariaDB - for storage
 * Sequelize - for Node.js => DB
 
-## Related Projects
+## Related Services
 
   - [Main Player](https://github.com/kle-io/main-song-player)
   - [Toolbar Player](https://github.com/kle-io/toolbar)
