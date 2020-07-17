@@ -28,6 +28,10 @@
 
 An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
+## Roadmap
+See the project [Trello board](https://trello.com/b/FizwOhpW/sidebar) for ticket history, current status, and future plans.
+
+
 ## Development
 
 ### Installing Dependencies
