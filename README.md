@@ -27,7 +27,7 @@
 * [NodeJS](https://nodejs.org/en/download/package-manager/) - An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
 ## Roadmap
-See the project [Trello board](https://trello.com/b/xcm9TdP7/sidebar) for ticket history, current status, and future plans.
+See the project [Trello board](https://trello.com/b/FizwOhpW/sidebar) for ticket history, current status, and future plans.
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
