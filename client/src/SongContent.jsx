@@ -25,7 +25,7 @@ class SongContent extends Component {
           <Title>
             <div>
               <Username>
-                <a href="/">
+                <a href={`/${track.user.username}`}>
                   <span>
                     <UserDialog data={track.user}>
                       {track.user.fullName}
@@ -33,7 +33,7 @@ class SongContent extends Component {
                   </span>
                 </a>
               </Username>
-              <a href="/">{track.title}</a>
+              <a href={`/${track.id}`}>{track.title}</a>
             </div>
           </Title>
           <Stats>
