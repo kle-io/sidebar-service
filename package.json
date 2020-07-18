@@ -7,7 +7,7 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "start": "node -r dotenv/config server/index.js",
+    "start": "node -r dotenv/config server/server.js",
     "dev": "webpack --mode development -d --watch",
     "build": "webpack -p",
     "deploy:s3": "npm run build && grunt aws_s3",
@@ -66,7 +66,7 @@
     "webpack-cli": "^3.3.10"
   },
   "version": "1.0.0",
-  "main": ".eslintrc.js",
+  "main": "app.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kle-io/sidebar-service.git"
