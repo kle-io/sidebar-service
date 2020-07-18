@@ -2,7 +2,7 @@
 > Sidebar is a service responsible for delivering content and representational data as a module for [kle-io](https://github.com/kle-io), a single page music player app. :metal:
 
 <p align="center">
-  <img width="320" height="443" src="https://media.giphy.com/media/SUQPHqGOwvqtW1pjBb/giphy.gif" alt="sidebar demo">
+  <img width="382" height="754" src="https://media.giphy.com/media/WmuKrHEy9GItF1yfHL/giphy.gif" alt="sidebar demo">
 </p>
 
 ### Built With
