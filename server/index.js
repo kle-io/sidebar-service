@@ -1,10 +1,11 @@
 const express = require('express');
 const path = require('path');
 const logger = require('morgan');
-const db = require('../db/models');
+const db = require('../models');
 
 const app = express();
 app.use('/', express.static(path.resolve(__dirname, '..', 'public')));
+app.use('/:id', express.static(path.resolve(__dirname, '..', 'public')));
 app.use(express.json());
 app.use(logger('tiny'));
 
@@ -39,5 +40,4 @@ app.post('/api/sidebar/users/:username', (req, res, next) => {
     .catch(next);
 });
 
-const PORT = 3004;
-app.listen(PORT, () => console.log(`Server listening on port ${PORT}`));
+module.exports = app;
