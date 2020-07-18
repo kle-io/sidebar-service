@@ -1,4 +1,8 @@
-const Card = window.styled.div`
+import styledcomponents from 'styled-components';
+
+const styled = window.styled ? window.styled : styledcomponents;
+
+const Card = styled.div`
   display: block;
   box-sizing: border-box;
   outline: none;
@@ -19,7 +23,7 @@ const Card = window.styled.div`
   }
 `;
 
-const Arrow = window.styled.div`
+const Arrow = styled.div`
   left: 50%;
   margin-left: -4px;
   transform: rotate(45deg);
@@ -35,7 +39,7 @@ const Arrow = window.styled.div`
   z-index: -1;
 `;
 
-const CardContent = window.styled.div`
+const CardContent = styled.div`
   overflow: hidden;
   box-sizing: border-box;
   margin-bottom: 10px;
@@ -43,7 +47,7 @@ const CardContent = window.styled.div`
   text-align: center;
 `;
 
-const Avatar = window.styled.a`
+const Avatar = styled.a`
     &&& {
     display:block;
     width: 80px;
@@ -53,7 +57,7 @@ const Avatar = window.styled.a`
     }
 `;
 
-const ImageContainer = window.styled.div`
+const ImageContainer = styled.div`
   background: none;
   height: 80px;
   width: 80px;
@@ -61,7 +65,7 @@ const ImageContainer = window.styled.div`
   position: relative;
 `;
 
-const Image = window.styled.span`
+const Image = styled.span`
   border-radius: 50%;
   background-image: url(${(props) => props.url});
   background-repeat: no-repeat;
@@ -74,7 +78,7 @@ const Image = window.styled.span`
   display: block;
 `;
 
-const DescriptionContainer = window.styled.div`
+const DescriptionContainer = styled.div`
   font-size: 14px;
   margin-top: 15px;
   text-align: center;
@@ -84,7 +88,7 @@ const DescriptionContainer = window.styled.div`
   }
 `;
 
-const StatsContainer = window.styled.div`
+const StatsContainer = styled.div`
   margin-bottom: 4px;
 
   ul.stats-group {
@@ -121,7 +125,7 @@ const StatsContainer = window.styled.div`
   }
 `;
 
-const LocationContainer = window.styled.div`
+const LocationContainer = styled.div`
   font-size: 12px;
   font-weight: 100;
   color: #999;

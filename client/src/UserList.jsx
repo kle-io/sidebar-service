@@ -1,7 +1,10 @@
 import React from 'react';
+import styledcomponents from 'styled-components';
 import UserBadge from './UserBadge';
 
-const Wrapper = window.styled.div`
+const styled = window.styled ? window.styled : styledcomponents;
+
+const Wrapper = styled.div`
   margin-top: 0;
   padding: 10px 0 8px;
 

@@ -1,12 +1,14 @@
 import React from 'react';
-
+import styledcomponents from 'styled-components';
+import axios from 'axios';
 import Dashbox from './Dashbox';
 import Module from './Module';
 import BadgeList from './BadgeList';
 import { formatCount } from '../lib';
 import UserList from './UserList';
 
-const Container = window.styled.div`
+const styled = window.styled ? window.styled : styledcomponents;
+const Container = styled.div`
   & * {
     font: 12px/1.4 Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;
     color: #999;
@@ -25,7 +27,7 @@ const Container = window.styled.div`
   width: 330px;
 `;
 
-const Wrapper = window.styled.div`
+const Wrapper = styled.div`
   width: 300px;
   position: relative;
   height: auto;
@@ -105,8 +107,7 @@ class Sidebar extends React.Component {
       trackId = Math.floor(Math.random() * 100);
     }
 
-    fetch(`/api/sidebar/songs/${trackId}`)
-      .then((res) => res.json())
+    axios.get(`/api/sidebar/songs/${trackId}`)
       .then((data) => this.setState({ track: data }))
       // eslint-disable-next-line no-console
       .catch((err) => console.error(err));

@@ -1,13 +1,15 @@
 import React from 'react';
+import styledcomponents from 'styled-components';
 import UserDialog from './UserDialog';
 
-const Wrapper = window.styled.div`
+const styled = window.styled ? window.styled : styledcomponents;
+const Wrapper = styled.div`
   position: relative;
   height: 100%;
   word-wrap: break-word;
 `;
 
-const Avatar = window.styled.span`
+const Avatar = styled.span`
     background-image: url(${({ avatar }) => avatar});
     width: 40px;
     height: 40px;

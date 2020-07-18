@@ -1,16 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import styledcomponents from 'styled-components';
 import SongBadge from './SongBadge';
 import SetBadge from './SetBadge';
 
-const List = window.styled.ul`
+const styled = window.styled ? window.styled : styledcomponents;
+const List = styled.ul`
   list-style: none;
   margin: 0;
   padding: 0;
 `;
 
-const CompactListItem = window.styled.li`
+const CompactListItem = styled.li`
   padding: 5px 0;
   margin-right: -6px;
   left: -6px;

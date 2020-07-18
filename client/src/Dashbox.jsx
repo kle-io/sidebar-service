@@ -1,15 +1,18 @@
 import React from 'react';
+import styledcomponents from 'styled-components';
 
-const Wrapper = window.styled.div` margin: 0 0 25px; `;
+const styled = window.styled ? window.styled : styledcomponents;
 
-const Box = window.styled.div`
+const Wrapper = styled.div` margin: 0 0 25px; `;
+
+const Box = styled.div`
   background-color: #f2f2f2;
   border: 1px solid #e5e5e5;
   height: 173px;
   padding: 38px;
 `;
 
-const Image = window.styled.img`
+const Image = styled.img`
   padding-top: 1em;
 `;
 

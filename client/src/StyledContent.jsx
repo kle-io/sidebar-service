@@ -1,6 +1,8 @@
+import styledcomponents from 'styled-components';
 
+const styled = window.styled ? window.styled : styledcomponents;
 
-const Wrapper = window.styled.div`
+const Wrapper = styled.div`
   margin-top: 4px;
   min-height: 13px;
   float: right;
@@ -16,7 +18,7 @@ const Wrapper = window.styled.div`
   }
 `;
 
-const Stats = window.styled.ul`
+const Stats = styled.ul`
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -72,7 +74,7 @@ const Stats = window.styled.ul`
   }
 `;
 
-const Title = window.styled.div`
+const Title = styled.div`
   display: flex;
   align-items: flex-start;
   font-size: 14px;
@@ -110,7 +112,7 @@ const Title = window.styled.div`
   }
 `;
 
-const Username = window.styled.div`
+const Username = styled.div`
   font-weight: 100;
   height: 100%;
   width: 100%;

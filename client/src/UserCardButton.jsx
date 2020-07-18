@@ -1,8 +1,9 @@
 import React from 'react';
-
+import styledcomponents from 'styled-components';
 import PropTypes from 'prop-types';
 
-const Btn = window.styled.button`
+const styled = window.styled ? window.styled : styledcomponents;
+const Btn = styled.button`
   font-size: 11px;
   padding: 2px 9px 2px 8px;
   height: 22px;

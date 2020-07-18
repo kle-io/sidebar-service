@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import styledcomponents from 'styled-components';
 import PropTypes from 'prop-types';
 
 import UserCard from './UserCard';
 
-const DialogContainer = window.styled.span`
+const styled = window.styled ? window.styled : styledcomponents;
+const DialogContainer = styled.span`
   height: 17px;
 `;
 

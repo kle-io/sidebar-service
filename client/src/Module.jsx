@@ -1,18 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styledcomponents from 'styled-components';
 
 import { formatCount } from '../lib';
 
-const Wrapper = window.styled.div`
+const styled = window.styled ? window.styled : styledcomponents;
+const Wrapper = styled.div`
   margin-bottom: 20px;
 `;
 
-const Content = window.styled.div`
+const Content = styled.div`
   min-height: 60px;
   padding-top: 5px;
 `;
 
-const Link = window.styled.a`
+const Link = styled.a`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -23,7 +25,7 @@ const Link = window.styled.a`
   height: 30px;
 `;
 
-const Header = window.styled.h3`
+const Header = styled.h3`
   margin-top: 0;
   margin-bottom: 0;
   line-height: 24px;
@@ -38,7 +40,7 @@ const Header = window.styled.h3`
   }
 `;
 
-const Icon = window.styled.span`
+const Icon = styled.span`
   background-image: url("${(props) => props.url}");
   background-repeat: no-repeat;
   background-position: 50%;
