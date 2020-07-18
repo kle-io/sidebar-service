@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const logger = require('morgan');
-const db = require('../models');
+const db = require('./models');
 
 const app = express();
 app.use('/', express.static(path.resolve(__dirname, '..', 'public')));
