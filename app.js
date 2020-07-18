@@ -4,8 +4,8 @@ const logger = require('morgan');
 const router = require('./router');
 
 const app = express();
-app.use('/', express.static(path.resolve(__dirname, 'public')));
-app.use('/:id', express.static(path.resolve(__dirname, 'public')));
+app.use('/', express.static(path.resolve(__dirname, 'client', 'public')));
+app.use('/:id', express.static(path.resolve(__dirname, 'client', 'public')));
 app.use(express.json());
 app.use(logger('tiny'));
 
