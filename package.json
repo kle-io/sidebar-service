@@ -15,7 +15,7 @@
     "deploy:hub": "npm run build:docker && sudo docker push dezrogers/kleio_sidebar:latest",
     "db:setup": "npx sequelize db:create && npx sequelize db:migrate",
     "postdb:setup": "npx sequelize db:seed:all",
-    "lint": "npx eslint client/src/*",
+    "lint": "npx eslint src/client/src/*",
     "test": "npx jest",
     "test:coverage": "npm test -- --coverage"
   },
