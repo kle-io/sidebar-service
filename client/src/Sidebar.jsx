@@ -71,7 +71,7 @@ const relatedTracks = [{
   plays: 3514645,
 }, {
   id: 4,
-  title: 'You Can t Fail',
+  title: 'You Can\'t Fail',
   songURL: 'https:/s3-us-west-1.amazonaws.com/kleio.sidebar/tracks/alternative/You_Can_t_Fail.mp3',
   genre: 'alternative',
   cover: 'https://s3-us-west-1.amazonaws.com/kleio.sidebar/assets/lorempixel_480_technics.jpeg',
@@ -98,7 +98,12 @@ class Sidebar extends React.Component {
   }
 
   componentDidMount() {
-    const trackId = Math.floor(Math.random() * 100);
+    const path = window.location.pathname;
+    let trackId = Number(path.substring(1, path.length - 1));
+
+    if (!trackId || trackId <= 1 || trackId > 102) {
+      trackId = Math.floor(Math.random() * 100);
+    }
 
     fetch(`/api/sidebar/songs/${trackId}`)
       .then((res) => res.json())
