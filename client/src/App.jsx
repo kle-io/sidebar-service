@@ -108,7 +108,7 @@ class Sidebar extends React.Component {
     }
 
     axios.get(`/api/sidebar/songs/${trackId}`)
-      .then((data) => this.setState({ track: data }))
+      .then((result) => this.setState({ track: result.data }))
       // eslint-disable-next-line no-console
       .catch((err) => console.error(err));
   }

@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App snapshot renders 1`] = `
+<div
+  className="sc-bxivhb RoVUz"
+>
+  <div
+    className="sc-ifAKCX fqIVOz"
+  >
+    <div
+      className="sc-bdVaJa eWmnSm"
+    >
+      <article>
+        <a
+          href="https://soundcloud.com/rick-astley-official/never-gonna-give-you-up-7"
+        >
+          <div
+            className="sc-bwzfXH desowx"
+          >
+            <img
+              alt=""
+              className="sc-htpNat hSMoKD"
+              src="https://s3-us-west-1.amazonaws.com/kleio.sidebar/assets/dashbox-pro.png"
+            />
+          </div>
+        </a>
+      </article>
+    </div>
+    Module
+  </div>
+</div>
+`;
