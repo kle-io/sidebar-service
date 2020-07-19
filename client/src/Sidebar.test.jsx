@@ -1,13 +1,14 @@
 import renderer from 'react-test-renderer';
 import axios from 'axios';
-import App from './App';
+import Sidebar from './Sidebar';
+import ErrorBoundary from './ErrorBoundary';
 
 jest.mock('axios');
 jest.mock('./Module', () => () => 'Module');
 jest.mock('./UserList', () => () => 'UserList');
 jest.mock('./BadgeList', () => () => 'BadgeList');
 
-describe('App', () => {
+describe('Sidebar', () => {
   it('fetches async data', (done) => {
     const track = {
       id: 7,
@@ -85,7 +86,7 @@ describe('App', () => {
 
     axios.get = jest.fn(() => promise);
 
-    const wrapper = mount(<App />);
+    const wrapper = mount(<Sidebar />);
 
     // Assertion that component state is empty before promise resolves
     expect(wrapper.state('track')).not.toHaveProperty('id');
@@ -104,21 +105,20 @@ describe('App', () => {
   });
 
   it('fetches async data but fails', (done) => {
-    const promise = new Promise(
-      (reject) => setTimeout(() => reject(new Error('Doh')), 100),
-    );
+    const promise = new Promise((resolve, reject) => (
+      setTimeout(() => reject(new Error('Doh')), 100)
+    ));
 
     axios.get = jest.fn(() => promise);
 
-    const wrapper = mount(<App />);
-
+    const wrapper = mount(<Sidebar />);
+    expect(wrapper.state('track')).not.toHaveProperty('id');
     promise.catch(() => {
       // Wait for all asynchronous events to be executed
       setImmediate(() => {
         // rerender the component
         wrapper.update();
         expect(wrapper.state('track')).not.toHaveProperty('id');
-        expect(wrapper.find('.error').length).toEqual(1);
         axios.get.mockClear();
         done();
       });
@@ -126,7 +126,7 @@ describe('App', () => {
   });
 
   test('snapshot renders', () => {
-    const component = renderer.create(<App />);
+    const component = renderer.create(<Sidebar />);
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });

@@ -1,11 +1,12 @@
 import React from 'react';
 import styledcomponents from 'styled-components';
 import axios from 'axios';
+import ErrorBoundary from './ErrorBoundary';
 import Dashbox from './Dashbox';
 import Module from './Module';
 import BadgeList from './BadgeList';
-import { formatCount } from '../lib';
 import UserList from './UserList';
+import { formatCount } from '../lib';
 
 const styled = window.styled ? window.styled : styledcomponents;
 const Container = styled.div`
@@ -26,7 +27,6 @@ const Container = styled.div`
   height: auto;
   width: 330px;
 `;
-
 const Wrapper = styled.div`
   width: 300px;
   position: relative;
@@ -101,11 +101,11 @@ class Sidebar extends React.Component {
 
   componentDidMount() {
     const path = window.location.pathname;
-    let trackId = Number(path.substring(1, path.length - 1));
+    const trackId = Number(path.substring(1, path.length - 1));
 
-    if (!trackId || trackId <= 1 || trackId > 102) {
-      trackId = Math.floor(Math.random() * 100);
-    }
+    // if (!trackId || trackId <= 1 || trackId > 102) {
+    //   trackId = Math.floor(Math.random() * 100);
+    // }
 
     axios.get(`/api/sidebar/songs/${trackId}`)
       .then((result) => this.setState({ track: result.data }))
@@ -115,34 +115,35 @@ class Sidebar extends React.Component {
 
   render() {
     const { track } = this.state;
-    const { playlists } = track;
     return (
       <Container>
         <Wrapper>
-          <Dashbox />
-          <Module title="Related tracks">
-            <BadgeList data={relatedTracks} related />
-          </Module>
-          {track.album && (
+          <ErrorBoundary>
+            <Dashbox />
+            <Module title="Related tracks">
+              <BadgeList data={relatedTracks} related />
+            </Module>
+            {track.album && (
             <Module title="In albums">
               <BadgeList data={[track.album]} />
             </Module>
-          )}
-          {playlists && (
+            )}
+            {track.playlists && (
             <Module title="In playlists">
-              <BadgeList data={playlists.slice(0, 3)} />
+              <BadgeList data={track.playlists.slice(0, 3)} />
             </Module>
-          )}
-          {track.UserFavorite && (
+            )}
+            {track.UserFavorite && (
             <Module count={formatCount(track.likes)} title="likes">
               <UserList users={track.UserFavorite.slice(0, 9)} />
             </Module>
-          )}
-          {track.UserShare && (
+            )}
+            {track.UserShare && (
             <Module count={formatCount((track.reposts))} title="reposts">
               <UserList users={track.UserShare.slice(0, 9)} />
             </Module>
-          )}
+            )}
+          </ErrorBoundary>
         </Wrapper>
       </Container>
     );
