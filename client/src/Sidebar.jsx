@@ -103,9 +103,9 @@ class Sidebar extends React.Component {
     const path = window.location.pathname;
     const trackId = Number(path.substring(1, path.length - 1));
 
-    // if (!trackId || trackId <= 1 || trackId > 102) {
-    //   trackId = Math.floor(Math.random() * 100);
-    // }
+    if (!trackId || trackId <= 1 || trackId > 102) {
+       trackId = Math.floor(Math.random() * 100);
+    }
 
     axios.get(`/api/sidebar/songs/${trackId}`)
       .then((result) => this.setState({ track: result.data }))
