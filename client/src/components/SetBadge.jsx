@@ -7,7 +7,7 @@ import Playlist from './SetContent-Playlist';
 const styled = window.styled ? window.styled : styledcomponents;
 
 const Cover = styled.span`
-  background: transparent 50%/contain no-repeat;
+  background: transparent 50% / contain no-repeat;
   margin-right: 4px;
   padding: 5px 6px;
   width: 50px;
@@ -33,24 +33,7 @@ const SetBadge = ({ set }) => (
 );
 
 SetBadge.propTypes = {
-  set: PropTypes.oneOf([
-    PropTypes.shape({
-      id: PropTypes.number,
-      title: PropTypes.string,
-      cover: PropTypes.string,
-      userUsername: PropTypes.string,
-      type: PropTypes.string,
-      year: PropTypes.number,
-    }),
-    PropTypes.shape({
-      id: PropTypes.number,
-      title: PropTypes.string,
-      username: PropTypes.string,
-      cover: PropTypes.string,
-      likes: PropTypes.number,
-      reposts: PropTypes.number,
-    }),
-  ]),
+  set: PropTypes.object,
 };
 
 SetBadge.defaultProps = {

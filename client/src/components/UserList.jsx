@@ -1,5 +1,6 @@
 import React from 'react';
 import styledcomponents from 'styled-components';
+import PropTypes from 'prop-types';
 import UserBadge from './UserBadge';
 
 const styled = window.styled ? window.styled : styledcomponents;
@@ -25,14 +26,18 @@ const Wrapper = styled.div`
 const UserList = ({ users }) => (
   <Wrapper>
     <ul>
-      {users
-        && users.map((user) => (
-          <li key={user.id}>
+      {users &&
+        users.map((user) => (
+          <li key={user.username}>
             <UserBadge user={user} />
           </li>
         ))}
     </ul>
   </Wrapper>
 );
+
+UserList.propTypes = {
+  users: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
 
 export default UserList;

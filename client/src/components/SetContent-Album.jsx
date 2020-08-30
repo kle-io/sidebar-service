@@ -1,28 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-  Wrapper,
-  Title,
-  Username,
-} from './StyledContent';
+import { Wrapper, Title } from './StyledContent';
 import UserDialog from './UserDialog';
 
 const Album = ({ data }) => (
   <>
     <Wrapper>
       <Title>
-        <div>
-          <Username>
-            <a href="/">
-              <span>
-                <UserDialog data={data.user}>
-                  {data.user.fullName}
-                </UserDialog>
-              </span>
-            </a>
-          </Username>
-          <a href="/"><span>{data.title}</span></a>
-        </div>
+        <UserDialog user={data.user} />
+
+        <a href="/">
+          <span>{data.title}</span>
+        </a>
       </Title>
       {(data.type || data.year) && (
         <span>

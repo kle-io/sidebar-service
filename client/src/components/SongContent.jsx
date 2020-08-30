@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {
-  Wrapper,
-  Stats,
-  Title,
-  Username,
-} from './StyledContent';
-import { formatCount } from '../lib';
+import { Wrapper, Stats, Title } from './StyledContent';
+import { formatCount } from '../utils';
 import UserDialog from './UserDialog';
 
 class SongContent extends Component {
@@ -23,18 +18,8 @@ class SongContent extends Component {
       <>
         <Wrapper>
           <Title>
-            <div>
-              <Username>
-                <a href={`/${track.user.username}`}>
-                  <span>
-                    <UserDialog data={track.user}>
-                      {track.user.fullName}
-                    </UserDialog>
-                  </span>
-                </a>
-              </Username>
-              <a href={`/${track.id}`}>{track.title}</a>
-            </div>
+            <UserDialog user={track.user} />
+            <a href={`/${track.id}`}>{track.title}</a>
           </Title>
           <Stats>
             {track.plays > 0 && (
@@ -52,7 +37,6 @@ class SongContent extends Component {
               </li>
             )}
             {track.reposts > 0 && (
-
               <li>
                 <a href="/" className="ministats-reposts">
                   <span>{formatCount(track.reposts)}</span>
