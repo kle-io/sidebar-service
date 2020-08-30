@@ -53,7 +53,11 @@ const UserCardButton = (props) => {
 
 UserCardButton.propTypes = {
   handleFollow: PropTypes.func.isRequired,
-  selected: PropTypes.number.isRequired,
+  selected: PropTypes.bool,
+};
+
+UserCardButton.defaultProps = {
+  selected: false,
 };
 
 export default UserCardButton;

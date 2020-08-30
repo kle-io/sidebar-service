@@ -18,10 +18,8 @@ class SongContent extends Component {
       <>
         <Wrapper>
           <Title>
-            <div>
-              <UserDialog user={track.user} />
-              <a href={`/${track.id}`}>{track.title}</a>
-            </div>
+            <UserDialog user={track.user} />
+            <a href={`/${track.id}`}>{track.title}</a>
           </Title>
           <Stats>
             {track.plays > 0 && (

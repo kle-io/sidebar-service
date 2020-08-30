@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styledcomponents from 'styled-components';
 import UserCard from './UserCard';
 import withPopover from './hoc/withPopover';
@@ -33,21 +34,25 @@ const UserBadge = (props) => {
   const { user, isMousedOver, position, onFocus, onLeave } = props;
   return (
     <Wrapper>
-      {/* <a href="/">
-        <div> */}
       <Avatar avatar={user.avatar} />
-      {/* </div>
-      </a> */}
       {isMousedOver && (
         <UserCard
           data={user}
           position={position}
-          handleFocus={(e) => onFocus(e)}
-          handleLeave={(e) => onLeave(e)}
+          handleFocus={onFocus}
+          handleLeave={onLeave}
         />
       )}
     </Wrapper>
   );
+};
+
+UserBadge.propTypes = {
+  isMousedOver: PropTypes.bool.isRequired,
+  position: PropTypes.array.isRequired,
+  onFocus: PropTypes.func.isRequired,
+  onLeave: PropTypes.func.isRequired,
+  user: PropTypes.object.isRequired,
 };
 
 export default withPopover(UserBadge);

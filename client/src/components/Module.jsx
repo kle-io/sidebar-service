@@ -15,17 +15,16 @@ const Content = styled.div`
 `;
 
 const Link = styled.a`
-  display: flex;
+  display: inline-flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   color: #999;
   text-decoration: none;
-  border-bottom: 1px solid #f2f2f2;
   height: 30px;
 `;
 
-const Header = styled.h3`
+const Header = styled.span`
   margin-top: 0;
   margin-bottom: 0;
   line-height: 24px;
@@ -39,6 +38,14 @@ const Header = styled.h3`
   a:hover {
     color: #333;
   }
+`;
+
+const Heading = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 1px solid #f2f2f2;
 `;
 
 const Icon = styled.span`
@@ -68,18 +75,20 @@ const icons = {
 const Module = ({ title, children, count }) => (
   <Wrapper>
     <article>
-      <Link href="http://example.com">
-        <Header>
-          <Icon url={icons[title]} />
-          <span>
-            {(title === 'likes' || title === 'reposts') && formatCount(count)}
-            {` ${title}`}
-          </span>
-        </Header>
+      <Heading>
+        <Link href="http://example.com">
+          <Header>
+            <Icon url={icons[title]} />
+            <span>
+              {(title === 'likes' || title === 'reposts') && formatCount(count)}
+              {` ${title}`}
+            </span>
+          </Header>
+        </Link>
         <Header>
           <a href="/">View all</a>
         </Header>
-      </Link>
+      </Heading>
       <Content>{children}</Content>
     </article>
   </Wrapper>
@@ -88,7 +97,7 @@ const Module = ({ title, children, count }) => (
 Module.propTypes = {
   title: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
-  count: PropTypes.number,
+  count: PropTypes.string,
 };
 
 Module.defaultProps = {

@@ -8,7 +8,8 @@ const Wrapper = styled.div`
   float: right;
   width: 300px;
 
-  &:before, &:after {
+  &:before,
+  &:after {
     content: '';
     display: table;
   }
@@ -33,42 +34,45 @@ const Stats = styled.ul`
     list-style: none;
   }
 
-  li > span, li > a {
+  li > span,
+  li > a {
     margin: 5px 9px 5px 0;
     display: inline-block;
   }
 
-  li > span:before, li > a:before {
+  li > span:before,
+  li > a:before {
     width: 16px;
     height: 12px;
     vertical-align: top;
     background-repeat: no-repeat;
     background-position: 50%;
     display: inline-block;
-    content: "";
+    content: '';
   }
 
   .ministats-plays:before {
-    background-image: url("https://s3-us-west-1.amazonaws.com/kleio.sidebar/icons/iconmonstr-media-control-48-240.png");
+    background-image: url('https://s3-us-west-1.amazonaws.com/kleio.sidebar/icons/iconmonstr-media-control-48-240.png');
     background-size: contain;
   }
 
   .ministats-likes:before {
-    background-image: url("https://s3-us-west-1.amazonaws.com/kleio.sidebar/icons/iconmonstr-favorite-7-240.png");
+    background-image: url('https://s3-us-west-1.amazonaws.com/kleio.sidebar/icons/iconmonstr-favorite-7-240.png');
     background-size: contain;
   }
 
   .ministats-reposts:before {
-    background-image: url("https://s3-us-west-1.amazonaws.com/kleio.sidebar/icons/iconmonstr-retweet-2-240.png");
+    background-image: url('https://s3-us-west-1.amazonaws.com/kleio.sidebar/icons/iconmonstr-retweet-2-240.png');
     background-size: contain;
   }
 
   .ministats-comments:before {
-    background-image: url("https://s3-us-west-1.amazonaws.com/kleio.sidebar/icons/iconmonstr-speech-bubble-15-240.png");
+    background-image: url('https://s3-us-west-1.amazonaws.com/kleio.sidebar/icons/iconmonstr-speech-bubble-15-240.png');
     background-size: contain;
   }
 
-  a, a:visited {
+  a,
+  a:visited {
     text-decoration: none;
     color: #999;
   }
@@ -76,15 +80,13 @@ const Stats = styled.ul`
 
 const Title = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
   font-size: 14px;
-  width: 240px
+  width: 240px;
 
-  .truncate {
-    width: 240px
-  }
-
-  &:before, &:after {
+  &:before,
+  &:after {
     content: '';
     display: table;
   }
@@ -93,7 +95,7 @@ const Title = styled.div`
     clear: both;
   }
 
-  a {
+  & > a {
     height: 1.3em;
     float: left;
     color: #333;
@@ -122,7 +124,6 @@ const Username = styled.div`
   word-break: normal;
   font-size: 14px;
   line-height: 1;
-  margin: 0 0 2px;
   position: relative;
 
   &&& a {
@@ -138,9 +139,4 @@ const Username = styled.div`
   }
 `;
 
-export {
-  Wrapper,
-  Stats,
-  Title,
-  Username,
-};
+export { Wrapper, Stats, Title, Username };

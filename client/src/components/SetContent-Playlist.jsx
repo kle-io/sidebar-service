@@ -8,12 +8,10 @@ const Playlist = ({ data }) => (
   <>
     <Wrapper>
       <Title>
-        <div className="truncate">
-          <UserDialog user={data.user} />
-          <a href="/">
-            <span>{data.title}</span>
-          </a>
-        </div>
+        <UserDialog user={data.user} />
+        <a href="/">
+          <span>{data.title}</span>
+        </a>
       </Title>
       <Stats>
         {data.likes > 0 && (

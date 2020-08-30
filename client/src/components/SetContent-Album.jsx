@@ -7,12 +7,11 @@ const Album = ({ data }) => (
   <>
     <Wrapper>
       <Title>
-        <div>
-          <UserDialog user={data.user} />
-          <a href="/">
-            <span>{data.title}</span>
-          </a>
-        </div>
+        <UserDialog user={data.user} />
+
+        <a href="/">
+          <span>{data.title}</span>
+        </a>
       </Title>
       {(data.type || data.year) && (
         <span>

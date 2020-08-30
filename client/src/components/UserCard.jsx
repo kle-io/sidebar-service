@@ -122,7 +122,7 @@ UserCard.propTypes = {
   }),
   handleLeave: PropTypes.func.isRequired,
   handleFocus: PropTypes.func.isRequired,
-  position: PropTypes.number.isRequired,
+  position: PropTypes.arrayOf(PropTypes.number).isRequired,
 };
 
 UserCard.defaultProps = {

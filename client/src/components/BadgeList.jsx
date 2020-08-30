@@ -21,7 +21,7 @@ const CompactListItem = styled.li`
 const BadgeList = ({ related, data }) => (
   <List>
     {data.map((item) => (
-      <CompactListItem>
+      <CompactListItem key={item.id}>
         {related ? <SongBadge track={item} /> : <SetBadge set={item} />}
       </CompactListItem>
     ))}
@@ -30,40 +30,11 @@ const BadgeList = ({ related, data }) => (
 
 BadgeList.propTypes = {
   related: PropTypes.bool,
-  data: PropTypes.arrayOf(PropTypes.oneOf([
-    PropTypes.shape({
-      id: PropTypes.number,
-      title: PropTypes.string,
-      songURL: PropTypes.string,
-      genre: PropTypes.string,
-      plays: PropTypes.number,
-      cover: PropTypes.string,
-      likes: PropTypes.number,
-      comments: PropTypes.number,
-      reposts: PropTypes.number,
-      albumId: PropTypes.number,
-      userUsername: PropTypes.string,
-    }),
-    PropTypes.shape({
-      id: PropTypes.number,
-      title: PropTypes.string,
-      cover: PropTypes.string,
-      userUsername: PropTypes.string,
-      type: PropTypes.string,
-      year: PropTypes.number,
-    }),
-    PropTypes.shape({
-      id: PropTypes.number,
-      title: PropTypes.string,
-      cover: PropTypes.string,
-      likes: PropTypes.number,
-      reposts: PropTypes.number,
-    }),
-  ])),
+  data: PropTypes.arrayOf(PropTypes.object),
 };
 
 BadgeList.defaultProps = {
-  related: '',
+  related: false,
   data: [],
 };
 
