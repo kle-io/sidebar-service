@@ -1,13 +1,8 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import {
-  Wrapper,
-  Stats,
-  Title,
-  Username,
-} from './StyledContent';
-import { formatCount } from '../lib';
-import UserDialog from './UserDialog';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { Wrapper, Stats, Title, Username } from "./StyledContent";
+import { formatCount } from "../utils";
+import UserDialog from "./UserDialog";
 
 class SongContent extends Component {
   constructor(props) {
@@ -52,7 +47,6 @@ class SongContent extends Component {
               </li>
             )}
             {track.reposts > 0 && (
-
               <li>
                 <a href="/" className="ministats-reposts">
                   <span>{formatCount(track.reposts)}</span>

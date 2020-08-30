@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styledcomponents from 'styled-components';
+import React from "react";
+import PropTypes from "prop-types";
+import styledcomponents from "styled-components";
 
-import { formatCount } from '../lib';
+import { formatCount } from "../utils";
 
 const styled = window.styled ? window.styled : styledcomponents;
 const Wrapper = styled.div`
@@ -32,7 +32,8 @@ const Header = styled.h3`
   color: #999;
   font-weight: 100;
 
-  a, a:visited {
+  a,
+  a:visited {
     color: #999;
   }
   a:hover {
@@ -52,11 +53,16 @@ const Icon = styled.span`
 `;
 
 const icons = {
-  'Related tracks': 'https://s3-us-west-1.amazonaws.com/kleio.sidebar/icons/icons8-audio-wave-24.png',
-  likes: 'https://s3-us-west-1.amazonaws.com/kleio.sidebar/icons/iconmonstr-favorite-7-24.png',
-  'In albums': 'https://s3-us-west-1.amazonaws.com/kleio.sidebar/icons/iconmonstr-layer-2-240.png',
-  'In playlists': 'https://s3-us-west-1.amazonaws.com/kleio.sidebar/icons/iconmonstr-layer-2-240.png',
-  reposts: 'https://s3-us-west-1.amazonaws.com/kleio.sidebar/icons/iconmonstr-retweet-2-240.png',
+  "Related tracks":
+    "https://s3-us-west-1.amazonaws.com/kleio.sidebar/icons/icons8-audio-wave-24.png",
+  likes:
+    "https://s3-us-west-1.amazonaws.com/kleio.sidebar/icons/iconmonstr-favorite-7-24.png",
+  "In albums":
+    "https://s3-us-west-1.amazonaws.com/kleio.sidebar/icons/iconmonstr-layer-2-240.png",
+  "In playlists":
+    "https://s3-us-west-1.amazonaws.com/kleio.sidebar/icons/iconmonstr-layer-2-240.png",
+  reposts:
+    "https://s3-us-west-1.amazonaws.com/kleio.sidebar/icons/iconmonstr-retweet-2-240.png",
 };
 
 const Module = ({ title, children, count }) => (
@@ -66,17 +72,15 @@ const Module = ({ title, children, count }) => (
         <Header>
           <Icon url={icons[title]} />
           <span>
-            { (title === 'likes' || title === 'reposts') && formatCount(count) }
-            { ` ${title}` }
+            {(title === "likes" || title === "reposts") && formatCount(count)}
+            {` ${title}`}
           </span>
         </Header>
         <Header>
           <a href="/">View all</a>
         </Header>
       </Link>
-      <Content>
-        { children }
-      </Content>
+      <Content>{children}</Content>
     </article>
   </Wrapper>
 );
@@ -88,7 +92,7 @@ Module.propTypes = {
 };
 
 Module.defaultProps = {
-  count: '',
+  count: "",
 };
 
 export default Module;

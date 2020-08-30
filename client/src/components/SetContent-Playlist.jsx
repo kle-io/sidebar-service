@@ -1,13 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import {
-  Wrapper,
-  Stats,
-  Title,
-  Username,
-} from './StyledContent';
-import { formatCount } from '../lib';
-import UserDialog from './UserDialog';
+import React from "react";
+import PropTypes from "prop-types";
+import { Wrapper, Stats, Title, Username } from "./StyledContent";
+import { formatCount } from "../utils";
+import UserDialog from "./UserDialog";
 
 const Playlist = ({ data }) => (
   <>
@@ -17,13 +12,13 @@ const Playlist = ({ data }) => (
           <Username>
             <a href="/">
               <span>
-                <UserDialog data={data.user}>
-                  {data.user.fullName}
-                </UserDialog>
+                <UserDialog data={data.user}>{data.user.fullName}</UserDialog>
               </span>
             </a>
           </Username>
-          <a href="/"><span>{data.title}</span></a>
+          <a href="/">
+            <span>{data.title}</span>
+          </a>
         </div>
       </Title>
       <Stats>

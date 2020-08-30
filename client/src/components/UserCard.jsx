@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-import PropTypes from 'prop-types';
-import { formatCount } from '../lib';
-import UserCardButton from './UserCardButton';
+import PropTypes from "prop-types";
+import { formatCount } from "../utils";
+import UserCardButton from "./UserCardButton";
 import {
   Card,
   Arrow,
@@ -13,7 +13,7 @@ import {
   DescriptionContainer,
   StatsContainer,
   LocationContainer,
-} from './UserCardStyledContent';
+} from "./UserCardStyledContent";
 
 class UserCard extends Component {
   constructor(props) {
@@ -38,34 +38,43 @@ class UserCard extends Component {
   handleFollow() {
     let { followers } = this.state;
     const { followed } = this.state;
-    const { data: { username } } = this.props;
+    const {
+      data: { username },
+    } = this.props;
     if (followed) {
       followers -= 1;
     } else {
       followers += 1;
     }
 
-    this.setState((state) => ({ followers, followed: !state.followed }), () => {
-      const requestOptions = {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(this.state),
-      };
-      fetch(`/api/sidebar/users/${username}`, requestOptions)
-        .then((response) => response.json());
-    });
+    this.setState(
+      (state) => ({ followers, followed: !state.followed }),
+      () => {
+        const requestOptions = {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(this.state),
+        };
+        fetch(
+          `/api/sidebar/users/${username}`,
+          requestOptions
+        ).then((response) => response.json());
+      }
+    );
   }
 
   render() {
-    const {
-      data, position, handleFocus, handleLeave,
-    } = this.props;
+    const { data, position, handleFocus, handleLeave } = this.props;
     const { followers, followed } = this.state;
     return (
       <Card
         position={position}
-        onMouseEnter={(e) => { handleFocus(e); }}
-        onMouseLeave={() => { handleLeave(); }}
+        onMouseEnter={(e) => {
+          handleFocus(e);
+        }}
+        onMouseLeave={() => {
+          handleLeave();
+        }}
       >
         <Arrow />
         <CardContent>
@@ -75,7 +84,9 @@ class UserCard extends Component {
             </ImageContainer>
           </Avatar>
           <DescriptionContainer>
-            <a href="/" title={`Visit ${data.fullName}'s profile`}>{data.fullName}</a>
+            <a href="/" title={`Visit ${data.fullName}'s profile`}>
+              {data.fullName}
+            </a>
           </DescriptionContainer>
           <StatsContainer>
             <ul className="stats-group">
@@ -116,8 +127,9 @@ UserCard.propTypes = {
 
 UserCard.defaultProps = {
   data: {
-    avatar: 'https://s3-us-west-1.amazonaws.com/kleio.sidebar/icons/blue-linear-gradient-purple-151x151.png',
-    location: '',
+    avatar:
+      "https://s3-us-west-1.amazonaws.com/kleio.sidebar/icons/blue-linear-gradient-purple-151x151.png",
+    location: "",
   },
 };
 
