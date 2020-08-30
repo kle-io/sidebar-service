@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styledcomponents from 'styled-components';
 
-import { formatCount } from '../lib';
+import { formatCount } from '../utils';
 
 const styled = window.styled ? window.styled : styledcomponents;
 const Wrapper = styled.div`

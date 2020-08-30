@@ -1,6 +1,7 @@
 import React from 'react';
 import styledcomponents from 'styled-components';
-import UserDialog from './UserDialog';
+import UserCard from './UserCard';
+import withPopover from './hoc/withPopover';
 
 const styled = window.styled ? window.styled : styledcomponents;
 const Wrapper = styled.div`
@@ -28,17 +29,25 @@ const Avatar = styled.span`
   }
 `;
 
+const UserBadge = (props) => {
+  const { user, isMousedOver, position, onFocus, onLeave } = props;
+  return (
+    <Wrapper>
+      {/* <a href="/">
+        <div> */}
+      <Avatar avatar={user.avatar} />
+      {/* </div>
+      </a> */}
+      {isMousedOver && (
+        <UserCard
+          data={user}
+          position={position}
+          handleFocus={(e) => onFocus(e)}
+          handleLeave={(e) => onLeave(e)}
+        />
+      )}
+    </Wrapper>
+  );
+};
 
-const UserBadge = ({ user }) => (
-  <Wrapper>
-    <a href="/">
-      <div>
-        <UserDialog data={user}>
-          <Avatar avatar={user.avatar} />
-        </UserDialog>
-      </div>
-    </a>
-  </Wrapper>
-);
-
-export default UserBadge;
+export default withPopover(UserBadge);

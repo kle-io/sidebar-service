@@ -1,12 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-  Wrapper,
-  Stats,
-  Title,
-  Username,
-} from './StyledContent';
-import { formatCount } from '../lib';
+import { Wrapper, Stats, Title, Username } from './StyledContent';
+import { formatCount } from '../utils';
 import UserDialog from './UserDialog';
 
 const Playlist = ({ data }) => (
@@ -14,16 +9,17 @@ const Playlist = ({ data }) => (
     <Wrapper>
       <Title>
         <div className="truncate">
-          <Username>
+          <UserDialog user={data.user} />
+          {/* <Username>
             <a href="/">
               <span>
-                <UserDialog data={data.user}>
-                  {data.user.fullName}
-                </UserDialog>
+                <UserDialog data={data.user}>{data.user.fullName}</UserDialog>
               </span>
             </a>
-          </Username>
-          <a href="/"><span>{data.title}</span></a>
+          </Username> */}
+          <a href="/">
+            <span>{data.title}</span>
+          </a>
         </div>
       </Title>
       <Stats>
@@ -54,12 +50,12 @@ Playlist.propTypes = {
     cover: PropTypes.string,
     likes: PropTypes.number,
     reposts: PropTypes.number,
-    user: PropTypes.object,
-  }),
+    user: PropTypes.object
+  })
 };
 
 Playlist.defaultProps = {
-  data: {},
+  data: {}
 };
 
 export default Playlist;
