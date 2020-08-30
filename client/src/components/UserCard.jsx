@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import PropTypes from "prop-types";
-import { formatCount } from "../utils";
-import UserCardButton from "./UserCardButton";
+import PropTypes from 'prop-types';
+import { formatCount } from '../utils';
+import UserCardButton from './UserCardButton';
 import {
   Card,
   Arrow,
@@ -13,7 +13,7 @@ import {
   DescriptionContainer,
   StatsContainer,
   LocationContainer,
-} from "./UserCardStyledContent";
+} from './UserCardStyledContent';
 
 class UserCard extends Component {
   constructor(props) {
@@ -51,8 +51,8 @@ class UserCard extends Component {
       (state) => ({ followers, followed: !state.followed }),
       () => {
         const requestOptions = {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(this.state),
         };
         fetch(
@@ -72,8 +72,8 @@ class UserCard extends Component {
         onMouseEnter={(e) => {
           handleFocus(e);
         }}
-        onMouseLeave={() => {
-          handleLeave();
+        onMouseLeave={(e) => {
+          handleLeave(e);
         }}
       >
         <Arrow />
@@ -128,8 +128,8 @@ UserCard.propTypes = {
 UserCard.defaultProps = {
   data: {
     avatar:
-      "https://s3-us-west-1.amazonaws.com/kleio.sidebar/icons/blue-linear-gradient-purple-151x151.png",
-    location: "",
+      'https://s3-us-west-1.amazonaws.com/kleio.sidebar/icons/blue-linear-gradient-purple-151x151.png',
+    location: '',
   },
 };
 

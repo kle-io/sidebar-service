@@ -1,12 +1,12 @@
-import React from "react";
-import styledcomponents from "styled-components";
-import axios from "axios";
-import ErrorBoundary from "./ErrorBoundary";
-import Dashbox from "./Dashbox";
-import Module from "./Module";
-import BadgeList from "./BadgeList";
-import UserList from "./UserList";
-import { formatCount } from "../utils";
+import React from 'react';
+import styledcomponents from 'styled-components';
+import axios from 'axios';
+import ErrorBoundary from '../ErrorBoundary';
+import Dashbox from './Dashbox';
+import Module from './Module';
+import BadgeList from './BadgeList';
+import UserList from './UserList';
+import { formatCount } from '../utils';
 
 const styled = window.styled ? window.styled : styledcomponents;
 const Container = styled.div`
@@ -45,45 +45,45 @@ const Wrapper = styled.div`
 const relatedTracks = [
   {
     id: 2,
-    title: "Lulu Is the Cat I Like Best",
+    title: 'Lulu Is the Cat I Like Best',
     songURL:
-      "https:/s3-us-west-1.amazonaws.com/kleio.sidebar/tracks/alternative/Lulu_Is_the_Cat_I_Like_Best.mp3",
-    genre: "alternative",
+      'https:/s3-us-west-1.amazonaws.com/kleio.sidebar/tracks/alternative/Lulu_Is_the_Cat_I_Like_Best.mp3',
+    genre: 'alternative',
     cover:
-      "https://s3-us-west-1.amazonaws.com/kleio.sidebar/assets/lorempixel_480_people.jpeg",
+      'https://s3-us-west-1.amazonaws.com/kleio.sidebar/assets/lorempixel_480_people.jpeg',
     likes: 87001,
     comments: 53070,
     reposts: 80675,
     albumId: 15,
     user: {
-      username: "Peggie_Lakin95",
-      fullName: "Renee Kulas",
+      username: 'Peggie_Lakin95',
+      fullName: 'Renee Kulas',
       followers: 80597,
       avatar:
-        "https://s3.amazonaws.com/uifaces/faces/twitter/gauravjassal/128.jpg",
-      location: "Carachester, OK",
+        'https://s3.amazonaws.com/uifaces/faces/twitter/gauravjassal/128.jpg',
+      location: 'Carachester, OK',
     },
     plays: 435882,
   },
   {
     id: 3,
-    title: "Memories Station of Tomorrow",
+    title: 'Memories Station of Tomorrow',
     songURL:
-      "https:/s3-us-west-1.amazonaws.com/kleio.sidebar/tracks/alternative/Memories_Station_of_Tomorrow.mp3",
-    genre: "alternative",
+      'https:/s3-us-west-1.amazonaws.com/kleio.sidebar/tracks/alternative/Memories_Station_of_Tomorrow.mp3',
+    genre: 'alternative',
     cover:
-      "https://s3-us-west-1.amazonaws.com/kleio.sidebar/assets/lorempixel_480_sports.jpeg",
+      'https://s3-us-west-1.amazonaws.com/kleio.sidebar/assets/lorempixel_480_sports.jpeg',
     likes: 93945,
     comments: 31460,
     reposts: 93471,
     albumId: 13,
     user: {
-      username: "Justine_Kuhlman95",
-      fullName: "Claude Heidenreich",
+      username: 'Justine_Kuhlman95',
+      fullName: 'Claude Heidenreich',
       followers: 45890,
       avatar:
-        "https://s3.amazonaws.com/uifaces/faces/twitter/baliomega/128.jpg",
-      location: "Karinamouth, RI",
+        'https://s3.amazonaws.com/uifaces/faces/twitter/baliomega/128.jpg',
+      location: 'Karinamouth, RI',
     },
     plays: 3514645,
   },
@@ -91,20 +91,20 @@ const relatedTracks = [
     id: 4,
     title: "You Can't Fail",
     songURL:
-      "https:/s3-us-west-1.amazonaws.com/kleio.sidebar/tracks/alternative/You_Can_t_Fail.mp3",
-    genre: "alternative",
+      'https:/s3-us-west-1.amazonaws.com/kleio.sidebar/tracks/alternative/You_Can_t_Fail.mp3',
+    genre: 'alternative',
     cover:
-      "https://s3-us-west-1.amazonaws.com/kleio.sidebar/assets/lorempixel_480_technics.jpeg",
+      'https://s3-us-west-1.amazonaws.com/kleio.sidebar/assets/lorempixel_480_technics.jpeg',
     likes: 7278,
     comments: 59745,
     reposts: 87126,
     albumId: 11,
     user: {
-      username: "Lavern.Schultz",
-      fullName: "Rose Morar",
+      username: 'Lavern.Schultz',
+      fullName: 'Rose Morar',
       followers: 81923,
-      avatar: "https://s3.amazonaws.com/uifaces/faces/twitter/j2deme/128.jpg",
-      location: "West Alba, IA",
+      avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/j2deme/128.jpg',
+      location: 'West Alba, IA',
     },
     plays: 276845,
   },
@@ -120,7 +120,7 @@ class Sidebar extends React.Component {
 
   componentDidMount() {
     const path = window.location.pathname;
-    const trackId = Number(path.substring(1, path.length - 1));
+    let trackId = Number(path.substring(1, path.length - 1));
 
     if (!trackId || trackId <= 1 || trackId > 102) {
       trackId = Math.floor(Math.random() * 100);

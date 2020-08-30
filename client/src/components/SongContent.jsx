@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { Wrapper, Stats, Title, Username } from "./StyledContent";
-import { formatCount } from "../utils";
-import UserDialog from "./UserDialog";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { Wrapper, Stats, Title } from './StyledContent';
+import { formatCount } from '../utils';
+import UserDialog from './UserDialog';
 
 class SongContent extends Component {
   constructor(props) {
@@ -19,15 +19,7 @@ class SongContent extends Component {
         <Wrapper>
           <Title>
             <div>
-              <Username>
-                <a href={`/${track.user.username}`}>
-                  <span>
-                    <UserDialog data={track.user}>
-                      {track.user.fullName}
-                    </UserDialog>
-                  </span>
-                </a>
-              </Username>
+              <UserDialog user={track.user} />
               <a href={`/${track.id}`}>{track.title}</a>
             </div>
           </Title>

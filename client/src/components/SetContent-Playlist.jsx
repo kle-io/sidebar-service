@@ -1,21 +1,15 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Wrapper, Stats, Title, Username } from "./StyledContent";
-import { formatCount } from "../utils";
-import UserDialog from "./UserDialog";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Wrapper, Stats, Title } from './StyledContent';
+import { formatCount } from '../utils';
+import UserDialog from './UserDialog';
 
 const Playlist = ({ data }) => (
   <>
     <Wrapper>
       <Title>
         <div className="truncate">
-          <Username>
-            <a href="/">
-              <span>
-                <UserDialog data={data.user}>{data.user.fullName}</UserDialog>
-              </span>
-            </a>
-          </Username>
+          <UserDialog user={data.user} />
           <a href="/">
             <span>{data.title}</span>
           </a>
