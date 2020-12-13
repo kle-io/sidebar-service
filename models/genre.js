@@ -10,8 +10,5 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     timestamps: false,
   });
-  Genre.associate = (models) => {
-    Genre.hasMany(models.track);
-  };
   return Genre;
 };
