@@ -1,4 +1,4 @@
-const { playlistTracks } = require('../sample_data.js');
+const { playlistTracks } = require('../sampledata/sample_data.js');
 
 module.exports = {
   up: (queryInterface) => queryInterface.bulkInsert('playlistTracks', playlistTracks, {}),
