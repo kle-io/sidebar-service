@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     title: DataTypes.STRING,
     songUrl: DataTypes.STRING,
-    genre: DataTypes.STRING,
+    genreId: DataTypes.INTEGER,
     cover: DataTypes.STRING,
     likes: DataTypes.INTEGER,
     comments: DataTypes.INTEGER,
@@ -34,6 +34,7 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: false,
   });
   Track.associate = (models) => {
+    Track.belongsTo(models.genre);
     Track.belongsTo(models.user);
     Track.belongsTo(models.album, { foreignKey: 'albumId' });
     Track.belongsToMany(models.user, { as: 'UserShare', through: 'share' });

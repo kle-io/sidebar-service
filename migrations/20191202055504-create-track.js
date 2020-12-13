@@ -9,7 +9,7 @@ module.exports = {
     },
     title: Sequelize.STRING,
     songUrl: Sequelize.STRING,
-    genre: Sequelize.STRING,
+    genreId: Sequelize.INTEGER,
     cover: Sequelize.STRING,
     likes: Sequelize.INTEGER,
     comments: Sequelize.INTEGER,

@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 const axios = require('axios');
 
 const users = [
@@ -425,7 +426,7 @@ const users = [
   },
 ];
 
-const UIFACES_KEY = 'DCCF27C6-B1324D89-84FCEBD8-FE42EE32';
+const { UIFACES_KEY } = process.env;
 let calls = 3;
 function fetchPhotos(limit = 30) {
   return axios
@@ -435,7 +436,12 @@ function fetchPhotos(limit = 30) {
         Accept: 'application/json',
         'Cache-Control': 'no-cache',
       },
-      transformResponse: [(data) => JSON.parse(data).map((item) => item.photo)],
+      transformResponse: [
+        (data) => JSON.parse(data).map(({ photo, name: fullName }) => ({
+          photo,
+          fullName,
+        })),
+      ],
     })
     .then((res) => res.data)
     .catch((err) => {
@@ -449,10 +455,11 @@ function fetchPhotos(limit = 30) {
 Promise.all(Array(4).fill(fetchPhotos())).then((results) => {
   const photos = results.flat();
   users.forEach((user, i) => {
-    users[i].avatar = photos[i];
+    users[i].fullName = photos[i].fullName;
+    users[i].avatar = photos[i].photo;
   });
 
-  fs.writeFile('newusers.js', JSON.stringify(users), (err) => {
+  fs.writeFile(path.join(__dirname, 'newusers.js'), JSON.stringify(users), (err) => {
     if (err) throw err;
     console.log('The file has been saved!');
   });
