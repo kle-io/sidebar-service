@@ -6,12 +6,21 @@ const getSong = (req, res) => db.track
     where: { id: req.params.id || Math.floor(Math.random() * 105) },
     include: [
       { all: true, nested: true },
+      { model: db.playlist, limit: 3 },
     ],
   })
   .then((track) => db.track
     .findAll({
       where: { genreId: track.genre.id, id: { [Op.not]: track.id } },
-      attributes: ['id', 'title', 'songUrl', 'cover', 'likes', 'comments', 'reposts'],
+      attributes: [
+        'id',
+        'title',
+        'songUrl',
+        'cover',
+        'likes',
+        'comments',
+        'reposts',
+      ],
       include: { model: db.user },
       limit: 3,
     })
