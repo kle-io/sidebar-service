@@ -6,6 +6,7 @@ import Dashbox from './Dashbox';
 import Module from './Module';
 import BadgeList from './BadgeList';
 import UserList from './UserList';
+import RelatedTracks from './RelatedTracks';
 import { formatCount } from '../utils';
 
 const styled = window.styled ? window.styled : styledcomponents;
@@ -73,9 +74,7 @@ class Sidebar extends React.Component {
         <Wrapper>
           <ErrorBoundary>
             <Dashbox />
-            <Module title="Related tracks">
-              <BadgeList data={relatedTracks} related />
-            </Module>
+	    <RelatedTracks tracks={relatedTracks} />
             {track.album && (
               <Module title="In albums">
                 <BadgeList data={[track.album]} />

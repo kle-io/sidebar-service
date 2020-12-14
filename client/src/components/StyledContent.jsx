@@ -6,7 +6,7 @@ const Wrapper = styled.div`
   margin-top: 4px;
   min-height: 13px;
   float: right;
-  width: 300px;
+  max-width: 300px;
 
   &:before,
   &:after {
@@ -105,7 +105,7 @@ const Title = styled.div`
   }
 
   a span {
-    display: inline-block;
+    display: block;
     padding: 0;
     overflow: hidden;
     text-overflow: ellipsis;

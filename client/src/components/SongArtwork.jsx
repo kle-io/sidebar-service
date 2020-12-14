@@ -5,7 +5,7 @@ import styledcomponents from 'styled-components';
 const styled = window.styled ? window.styled : styledcomponents;
 
 const Cover = styled.span`
-  background: transparent 50%/contain no-repeat;
+  background: transparent 50% / contain no-repeat;
   margin-right: 4px;
   padding: 5px 6px;
   width: 50px;
@@ -13,7 +13,7 @@ const Cover = styled.span`
   position: relative;
   text-align: center;
   float: left;
-  `;
+`;
 
 const Image = styled.img`
   width: 50px;
@@ -21,25 +21,67 @@ const Image = styled.img`
   opacity: 1;
 `;
 
-class SongArtwork extends Component {
-  constructor(props) {
-    super(props);
+const PlayButton = styled.span`
+  cursor: pointer;
+  visibility: hidden;
+  display: inline-block;
+  position: absolute;
+  top: 5px;
+  bottom: 5px;
+  left: 6px;
+  right: 6px;
+  padding: 11px;
+  z-index: 2;
+`;
 
-    this.state = {};
+const Button = styled.a`
+  width: 28px;
+  height: 28px;
+  margin: 1px 0 1px 1px;
+  line-height: 42px;
+
+  &::before {
+    display: block;
+    position: absolute;
+    top: 6px;
+    left: 5px;
+    width: 38px;
+    height: 38px;
+    content: '';
+    opacity: 1;
+    transition: opacity 0.3s;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+    background-image: url(${(props) => (props.isPlaying ? props.icons.pause : props.icons.play)});
   }
 
-  render() {
-    const { track } = this.props;
-    return (
-      <Cover>
-        <Image src={track.cover} />
-        {/* TODO: play button - upload icons to S3  */}
-      </Cover>
-    );
+  &:after {
+    content: '';
+    opacity: 0;
+    transition: opacity 0.5s;
   }
-}
+`;
+
+const SongArtwork = ({ track, isPlaying, handlePlaying }) => {
+  const icons = {
+    play: 'https://s3-us-west-1.amazonaws.com/kleio.sidebar/icons/play.png',
+    pause: 'https://s3-us-west-1.amazonaws.com/kleio.sidebar/icons/pause.png',
+  };
+
+  return (
+    <Cover>
+      <Image src={track.cover} />
+      <PlayButton className="songBadge__playButton">
+        <Button icons={icons} isPlaying={isPlaying} onClick={() => handlePlaying(track)}>{isPlaying ? 'Pause' : 'Play'}</Button>
+      </PlayButton>
+    </Cover>
+  );
+};
 
 SongArtwork.propTypes = {
+  isPlaying: PropTypes.bool.isRequired,
+  handlePlaying: PropTypes.func.isRequired,
   track: PropTypes.shape({
     id: PropTypes.number,
     title: PropTypes.string,
