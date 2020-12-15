@@ -58,7 +58,7 @@ class RelatedTracks extends React.Component {
 
     return (
       <div>
-        <Module title="Related Tracks">
+        <Module title="Related tracks">
           <BadgeList data={tracks} playing={playing} current={src} handlePlaying={this.handlePlaying} related />
         </Module>
         {this.renderHowler(src, playing)}
