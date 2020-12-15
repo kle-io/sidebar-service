@@ -19,6 +19,7 @@ const getSong = (req, res) => db.track
         'likes',
         'comments',
         'reposts',
+        'plays'
       ],
       include: { model: db.user },
       limit: 3,
