@@ -21,7 +21,7 @@ const SongBadge = ({ current, track, handlePlaying, isPlaying }) => (
       handlePlaying={handlePlaying}
       isPlaying={isPlaying}
     />
-    <SongContent track={track} isPlaying={isPlaying} />
+    <SongContent current={current} track={track} isPlaying={isPlaying} />
   </Wrapper>
 );
 

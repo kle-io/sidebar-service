@@ -47,10 +47,10 @@ const Button = styled.a`
   &::before {
     display: block;
     position: absolute;
-    top: 6px;
-    left: 6px;
-    width: 38px;
-    height: 38px;
+    top: 10px;
+    left: 10px;
+    width: 30px;
+    height: 30px;
     content: '';
     opacity: 1;
     transition: opacity 0.3s;
