@@ -34,6 +34,10 @@ const PlayButton = styled.span`
   z-index: 2;
 `;
 
+const getPlayerImageURL = ({current, isPlaying, icons}) => {
+  if (!current || !isPlaying) return icons.play;
+  return icons.pause;
+}
 const Button = styled.a`
   width: 28px;
   height: 28px;
@@ -44,7 +48,7 @@ const Button = styled.a`
     display: block;
     position: absolute;
     top: 6px;
-    left: 5px;
+    left: 6px;
     width: 38px;
     height: 38px;
     content: '';
@@ -53,7 +57,7 @@ const Button = styled.a`
     background-repeat: no-repeat;
     background-position: 50%;
     background-size: cover;
-    background-image: url(${(props) => (props.isPlaying ? props.icons.pause : props.icons.play)});
+    background-image: url(${getPlayerImageURL});
   }
 
   &:after {
@@ -63,23 +67,33 @@ const Button = styled.a`
   }
 `;
 
-const SongArtwork = ({ track, isPlaying, handlePlaying }) => {
+const SongArtwork = ({ current, track, isPlaying, handlePlaying }) => {
   const icons = {
     play: 'https://s3-us-west-1.amazonaws.com/kleio.sidebar/icons/play.png',
     pause: 'https://s3-us-west-1.amazonaws.com/kleio.sidebar/icons/pause.png',
   };
+  const handleClick = () => handlePlaying(track);
+  const buttonLabel = isPlaying ? 'Pause' : 'Play';
 
   return (
     <Cover>
       <Image src={track.cover} />
       <PlayButton className="songBadge__playButton">
-        <Button icons={icons} isPlaying={isPlaying} onClick={() => handlePlaying(track)}>{isPlaying ? 'Pause' : 'Play'}</Button>
+        <Button 
+          current={current}
+          icons={icons}
+          isPlaying={isPlaying} 
+          onClick={handleClick}
+        >
+          {buttonLabel}
+        </Button>
       </PlayButton>
     </Cover>
   );
 };
 
 SongArtwork.propTypes = {
+  current: PropTypes.bool.isRequired,
   isPlaying: PropTypes.bool.isRequired,
   handlePlaying: PropTypes.func.isRequired,
   track: PropTypes.shape({

@@ -5,22 +5,28 @@ import SongArtwork from './SongArtwork';
 import SongContent from './SongContent';
 
 const Wrapper = styled.div`
-    &:hover .songBadge__playButton {
+  .songBadge__playButton {
+    visibility: ${({ current, isPlaying }) => ( current && isPlaying ? 'visible' : 'hidden')}
+  }
+  &:hover .songBadge__playButton {
       visibility: visible;
-    }
-    &:hover {
-      background-color: pink;
-    }
+  }
 `;
 
-const SongBadge = ({ track, handlePlaying, isPlaying }) => (
-  <Wrapper>
-    <SongArtwork track={track} handlePlaying={handlePlaying} isPlaying={isPlaying} />
+const SongBadge = ({ current, track, handlePlaying, isPlaying }) => (
+  <Wrapper current={current} isPlaying={isPlaying}>
+    <SongArtwork
+      current={current}
+      track={track} 
+      handlePlaying={handlePlaying}
+      isPlaying={isPlaying}
+    />
     <SongContent track={track} isPlaying={isPlaying} />
   </Wrapper>
 );
 
 SongBadge.propTypes = {
+  current: PropTypes.bool.isRequired,
   handlePlaying: PropTypes.func.isRequired,
   isPlaying: PropTypes.bool.isRequired,
   track: PropTypes.shape({

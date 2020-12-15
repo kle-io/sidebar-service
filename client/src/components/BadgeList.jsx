@@ -19,7 +19,7 @@ const CompactListItem = styled.li`
 `;
 
 const BadgeList = ({
-  related, data, handlePlaying, playing,
+  related, data, handlePlaying, current, playing
 }) => (
   <List>
     {data.map((item) => (
@@ -28,7 +28,8 @@ const BadgeList = ({
           <SongBadge
             track={item}
             handlePlaying={handlePlaying}
-            isPlaying={playing === item.id}
+            isPlaying={playing}
+            current={current === item.songUrl}
           />
         ) : (
           <SetBadge set={item} />
@@ -39,15 +40,20 @@ const BadgeList = ({
 );
 
 BadgeList.propTypes = {
+  current: PropTypes.string,
   related: PropTypes.bool,
   data: PropTypes.arrayOf(PropTypes.object),
-  handlePlaying: PropTypes.func.isRequired,
-  playing: PropTypes.number.isRequired,
+  handlePlaying: PropTypes.func,
+  playing: PropTypes.bool,
 };
 
+
 BadgeList.defaultProps = {
-  related: false,
   data: [],
+  current: '',
+  playing: false,
+  related: false,
+  handlePlaying: () => {},
 };
 
 export default BadgeList;
