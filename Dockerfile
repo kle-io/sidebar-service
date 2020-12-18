@@ -1,11 +1,22 @@
 FROM node:latest
-RUN mkdir -p /src/app/
-WORKDIR /src/app/
-COPY package.json /src/app/
-COPY .sequelizerc /src/app/
-COPY db /src/app/
-COPY server /src/app/
-COPY public /src/app/
 
-RUN export NODE_ENV=production
-RUN npm install --production
+# Create app dir
+WORKDIR usr/src/app/
+
+# Install dependencies
+COPY package*.json ./
+
+# Build code for production
+RUN npm ci --only-production
+
+# Bundle app source
+COPY . .
+
+# Setup ORM and seed DB
+RUN npm db:setup
+
+# Create static files
+RUN npm build
+
+EXPOSE 3004
+CMD ["node", "server/server.js"]
