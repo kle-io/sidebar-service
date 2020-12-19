@@ -7,7 +7,8 @@ WORKDIR usr/src/app/
 COPY package*.json ./
 
 # Build code for production
-RUN npm ci --only-production
+# RUN npm ci --only-production
+npm install
 
 # Bundle app source
 COPY . .
@@ -19,4 +20,4 @@ RUN npm db:setup
 RUN npm build
 
 EXPOSE 3004
-CMD ["node", "server/server.js"]
+CMD ["node", "server.js"]

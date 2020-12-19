@@ -1,4 +1,4 @@
-const db = require('../../../models');
+const db = require('../../../db/models');
 
 const getUser = (req, res, next) => {
   db.user.findOne({

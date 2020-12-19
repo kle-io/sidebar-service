@@ -1,5 +1,4 @@
 const dotenv = require('dotenv');
-const mysql = require('./database.js');
 const aws = require('./aws.js');
 
 const envFound = dotenv.config();
@@ -10,6 +9,5 @@ if (envFound.error) {
 
 module.exports = {
   port: parseInt(process.env.PORT, 10),
-  mysql,
   aws,
 };
