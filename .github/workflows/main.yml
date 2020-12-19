@@ -29,6 +29,11 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: dezrogers/sidebar:latest
+          secrets: |
+            "DB_HOST=${{ secrets.DB_HOST }}"
+            "DB_NAME=${{ secrets.DB_NAME }}"
+            "DB_USER=${{ secrets.DB_USER }}"
+            "DB_PASS=${{ secrets.DB_PASS }}"
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
