@@ -7,8 +7,10 @@ WORKDIR usr/src/app/
 COPY package*.json ./
 
 # Build code for production
-# RUN npm ci --only-production
-RUN npm install
+RUN npm ci --only-production
+
+# Build code for development
+# RUN npm install
 
 # Bundle app source
 COPY . .
