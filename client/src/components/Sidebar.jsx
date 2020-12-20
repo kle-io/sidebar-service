@@ -74,7 +74,7 @@ class Sidebar extends React.Component {
         <Wrapper>
           <ErrorBoundary>
             <Dashbox />
-	    <RelatedTracks tracks={relatedTracks} />
+            <RelatedTracks tracks={relatedTracks} />
             {track.album && (
               <Module title="In albums">
                 <BadgeList data={[track.album]} />

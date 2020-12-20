@@ -5,7 +5,9 @@ import { Username as UsernameWrapper } from './StyledContent';
 import withPopover from './hoc/withPopover';
 
 const UserDialog = (props) => {
-  const { user, isMousedOver, position, onFocus, onLeave } = props;
+  const {
+    user, isMousedOver, position, onFocus, onLeave,
+  } = props;
 
   return (
     <UsernameWrapper>

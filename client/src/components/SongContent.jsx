@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Wrapper, Stats, Title } from './StyledContent';
@@ -6,16 +6,16 @@ import { formatCount } from '../utils';
 import UserDialog from './UserDialog';
 
 const SongTitle = styled.span`
-  color: ${({ active }) => ( active ? '#f50' : 'inherit' )}
+  color: ${({ active }) => (active ? '#f50' : 'inherit')}
 `;
 
-const SongContent = ({current, track, isPlaying}) => (
+const SongContent = ({ current, track, isPlaying }) => (
   <>
     <Wrapper>
       <Title>
         <UserDialog user={track.user} />
         <a href={`/${track.id}`}>
-          <SongTitle active={current && isPlaying} >{track.title}</SongTitle>
+          <SongTitle active={current && isPlaying}>{track.title}</SongTitle>
         </a>
       </Title>
       <Stats>

@@ -57,14 +57,16 @@ class UserCard extends Component {
         };
         fetch(
           `/api/sidebar/users/${username}`,
-          requestOptions
+          requestOptions,
         ).then((response) => response.json());
-      }
+      },
     );
   }
 
   render() {
-    const { data, position, handleFocus, handleLeave } = this.props;
+    const {
+      data, position, handleFocus, handleLeave,
+    } = this.props;
     const { followers, followed } = this.state;
     return (
       <Card

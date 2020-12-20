@@ -145,4 +145,6 @@ const Username = styled.div`
   }
 `;
 
-export { Wrapper, Stats, Title, Username };
+export {
+  Wrapper, Stats, Title, Username,
+};

@@ -26,8 +26,8 @@ const Wrapper = styled.div`
 const UserList = ({ users }) => (
   <Wrapper>
     <ul>
-      {users &&
-        users.map((user) => (
+      {users
+        && users.map((user) => (
           <li key={user.username}>
             <UserBadge user={user} />
           </li>

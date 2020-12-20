@@ -6,18 +6,20 @@ import SongContent from './SongContent';
 
 const Wrapper = styled.div`
   .songBadge__playButton {
-    visibility: ${({ current, isPlaying }) => ( current && isPlaying ? 'visible' : 'hidden')}
+    visibility: ${({ current, isPlaying }) => (current && isPlaying ? 'visible' : 'hidden')}
   }
   &:hover .songBadge__playButton {
       visibility: visible;
   }
 `;
 
-const SongBadge = ({ current, track, handlePlaying, isPlaying }) => (
+const SongBadge = ({
+  current, track, handlePlaying, isPlaying,
+}) => (
   <Wrapper current={current} isPlaying={isPlaying}>
     <SongArtwork
       current={current}
-      track={track} 
+      track={track}
       handlePlaying={handlePlaying}
       isPlaying={isPlaying}
     />

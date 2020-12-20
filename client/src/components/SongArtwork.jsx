@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import styledcomponents from 'styled-components';
 
@@ -34,10 +34,10 @@ const PlayButton = styled.span`
   z-index: 2;
 `;
 
-const getPlayerImageURL = ({current, isPlaying, icons}) => {
+const getPlayerImageURL = ({ current, isPlaying, icons }) => {
   if (!current || !isPlaying) return icons.play;
   return icons.pause;
-}
+};
 const Button = styled.a`
   width: 28px;
   height: 28px;
@@ -67,7 +67,9 @@ const Button = styled.a`
   }
 `;
 
-const SongArtwork = ({ current, track, isPlaying, handlePlaying }) => {
+const SongArtwork = ({
+  current, track, isPlaying, handlePlaying,
+}) => {
   const icons = {
     play: 'https://s3-us-west-1.amazonaws.com/kleio.sidebar/icons/play.png',
     pause: 'https://s3-us-west-1.amazonaws.com/kleio.sidebar/icons/pause.png',
@@ -79,10 +81,10 @@ const SongArtwork = ({ current, track, isPlaying, handlePlaying }) => {
     <Cover>
       <Image src={track.cover} />
       <PlayButton className="songBadge__playButton">
-        <Button 
+        <Button
           current={current}
           icons={icons}
-          isPlaying={isPlaying} 
+          isPlaying={isPlaying}
           onClick={handleClick}
         >
           {buttonLabel}

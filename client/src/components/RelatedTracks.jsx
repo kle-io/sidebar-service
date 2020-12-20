@@ -23,33 +23,33 @@ class RelatedTracks extends React.Component {
       return { src: songUrl, playing: true };
     });
   }
-  
-  playNext() {
-      const { tracks } = this.props;
-      const { src } = this.state;
 
-      let idx = tracks.findIndex((track) => track.songUrl === src);
-      if (idx === tracks.length - 1) {
-        idx = 0;
-      } else {
-        idx += 1;
-      }
-      const next = tracks[idx].songUrl;
-      this.setState({ src: next });
+  playNext() {
+    const { tracks } = this.props;
+    const { src } = this.state;
+
+    let idx = tracks.findIndex((track) => track.songUrl === src);
+    if (idx === tracks.length - 1) {
+      idx = 0;
+    } else {
+      idx += 1;
+    }
+    const next = tracks[idx].songUrl;
+    this.setState({ src: next });
   }
-  
+
   renderHowler(src, playing) {
-   if (src) {
-     return (
-      <ReactHowler
-        src={[src]}
-        preload={true}
-        playing={playing}
-        onEnd={this.playNext}
-      />
-     );
-   }
-   return null;
+    if (src) {
+      return (
+        <ReactHowler
+          src={[src]}
+          preload
+          playing={playing}
+          onEnd={this.playNext}
+        />
+      );
+    }
+    return null;
   }
 
   render() {
@@ -59,7 +59,13 @@ class RelatedTracks extends React.Component {
     return (
       <div>
         <Module title="Related tracks">
-          <BadgeList data={tracks} playing={playing} current={src} handlePlaying={this.handlePlaying} related />
+          <BadgeList
+            data={tracks}
+            playing={playing}
+            current={src}
+            handlePlaying={this.handlePlaying}
+            related
+          />
         </Module>
         {this.renderHowler(src, playing)}
       </div>
