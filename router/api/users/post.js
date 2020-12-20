@@ -1,4 +1,4 @@
-const db = require('../../../models');
+const db = require('../../../db/models');
 
 const updateUserFollowers = (req, res, next) => {
   db.user.update(req.body, {

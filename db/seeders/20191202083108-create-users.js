@@ -1,4 +1,4 @@
-const { users } = require('../sample_data.js');
+const { users } = require('../sampledata/sample_data.js');
 
 module.exports = {
   up: (queryInterface) => queryInterface.bulkInsert('users', users, {}),

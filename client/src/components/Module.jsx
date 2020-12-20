@@ -25,6 +25,8 @@ const Link = styled.a`
 `;
 
 const Header = styled.span`
+  display: flex;
+  align-items: center;
   margin-top: 0;
   margin-bottom: 0;
   line-height: 24px;
@@ -38,13 +40,17 @@ const Header = styled.span`
   a:hover {
     color: #333;
   }
+
+  .header__text {
+    font-size: 1.1em;  
+  }
 `;
 
 const Heading = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
   border-bottom: 1px solid #f2f2f2;
 `;
 
@@ -79,14 +85,14 @@ const Module = ({ title, children, count }) => (
         <Link href="http://example.com">
           <Header>
             <Icon url={icons[title]} />
-            <span>
+            <span className="header__text">
               {(title === 'likes' || title === 'reposts') && formatCount(count)}
               {` ${title}`}
             </span>
           </Header>
         </Link>
         <Header>
-          <a href="/">View all</a>
+          <a href="/"><span className="header__text">View all</span></a>
         </Header>
       </Heading>
       <Content>{children}</Content>

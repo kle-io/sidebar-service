@@ -1,4 +1,4 @@
-const { favorites } = require('../sample_data.js');
+const { favorites } = require('../sampledata/sample_data.js');
 
 module.exports = {
   up: (queryInterface) => queryInterface.bulkInsert('favorites', favorites, {}),

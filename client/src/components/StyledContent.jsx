@@ -6,7 +6,7 @@ const Wrapper = styled.div`
   margin-top: 4px;
   min-height: 13px;
   float: right;
-  width: 300px;
+  max-width: 300px;
 
   &:before,
   &:after {
@@ -32,21 +32,27 @@ const Stats = styled.ul`
     font-size: 11px;
     line-height: 12px;
     list-style: none;
+
+    
+  }
+
+  li > span {
+    
   }
 
   li > span,
   li > a {
-    margin: 5px 9px 5px 0;
-    display: inline-block;
+    margin: 5px 0;
+    width: 60px;
+    display: flex;
+    align-items: center;
   }
 
   li > span:before,
   li > a:before {
     width: 16px;
     height: 12px;
-    vertical-align: top;
     background-repeat: no-repeat;
-    background-position: 50%;
     display: inline-block;
     content: '';
   }
@@ -105,7 +111,7 @@ const Title = styled.div`
   }
 
   a span {
-    display: inline-block;
+    display: block;
     padding: 0;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -139,4 +145,6 @@ const Username = styled.div`
   }
 `;
 
-export { Wrapper, Stats, Title, Username };
+export {
+  Wrapper, Stats, Title, Username,
+};

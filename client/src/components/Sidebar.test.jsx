@@ -1,7 +1,6 @@
 import renderer from 'react-test-renderer';
 import axios from 'axios';
 import Sidebar from './Sidebar';
-import ErrorBoundary from './ErrorBoundary';
 
 jest.mock('axios');
 jest.mock('./Module', () => () => 'Module');
