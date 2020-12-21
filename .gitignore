@@ -33,7 +33,9 @@ client/public/app.js
 # Docker
 docker-compose.yml
 
-# dotenv
+# Secrets
 .env
+secrets/
 
 .vagrant/
+
